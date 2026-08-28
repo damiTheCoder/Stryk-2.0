@@ -1,0 +1,10 @@
+{
+  "name": "stryk-root",
+  "private": true,
+  "scripts": {
+    "dev": "cd stryk2.0 && pnpm run dev",
+    "build": "cd stryk2.0 && pnpm run build",
+    "start": "cd stryk2.0 && pnpm run start",
+    "lint": "cd stryk2.0 && pnpm run lint"
+  }
+}
