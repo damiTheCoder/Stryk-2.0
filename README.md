@@ -4,14 +4,14 @@
 
 A premium, open-source lease-to-own platform built with Next.js, shadcn/ui, and Tailwind CSS.
 
-[![CI](https://github.com/abderrahimghazali/stryk2.0/actions/workflows/ci.yml/badge.svg)](https://github.com/abderrahimghazali/stryk2.0/actions/workflows/ci.yml)
+[![CI](https://github.com/damiTheCoder/Stryk-2.0/actions/workflows/ci.yml/badge.svg)](https://github.com/damiTheCoder/Stryk-2.0/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-black.svg)](LICENSE)
 [![Next.js](https://img.shields.io/badge/Next.js-16-black)](https://nextjs.org)
 [![shadcn/ui](https://img.shields.io/badge/shadcn%2Fui-latest-black)](https://ui.shadcn.com)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind-v4-black)](https://tailwindcss.com)
 [![TypeScript](https://img.shields.io/badge/TypeScript-strict-black)](https://typescriptlang.org)
 
-[Live Demo](https://stryk2-0.vercel.app) · [Report Bug](https://github.com/abderrahimghazali/stryk2.0/issues) · [Request Feature](https://github.com/abderrahimghazali/stryk2.0/issues)
+[Live Demo](https://stryk2-0.vercel.app) · [Report Bug](https://github.com/damiTheCoder/Stryk-2.0/issues) · [Request Feature](https://github.com/damiTheCoder/Stryk-2.0/issues)
 
 ![Stryk 2.0 Dashboard](public/screenshots/shadcn-fintech.png)
 
@@ -69,8 +69,8 @@ A premium, open-source lease-to-own platform built with Next.js, shadcn/ui, and 
 ## Getting Started
 
 ```bash
-git clone https://github.com/abderrahimghazali/stryk2.0.git
-cd stryk2.0
+git clone https://github.com/damiTheCoder/Stryk-2.0.git
+cd Stryk-2.0
 pnpm install
 pnpm dev
 ```
