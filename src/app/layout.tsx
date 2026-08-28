@@ -17,20 +17,27 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://stryk2-0.vercel.app"),
-  title: "Stryk 2.0 — Lease Portfolio Management",
+  title: {
+    default: "Stryk 2.0 — Lease Portfolio Management",
+    template: "%s | Stryk 2.0",
+  },
   description: "A premium lease-to-own platform built with Next.js, shadcn/ui, and Tailwind CSS.",
+  icons: [
+    { rel: "icon", url: "/LO.png", type: "image/png" },
+    { rel: "apple", url: "/LO.png", type: "image/png" },
+  ],
   openGraph: {
     title: "Stryk 2.0 — Lease Portfolio Management",
     description: "A premium lease-to-own platform built with Next.js, shadcn/ui, and Tailwind CSS.",
     type: "website",
     url: "https://stryk2-0.vercel.app",
-    images: [{ url: "/screenshots/shadcn-fintech.png", width: 1200, height: 630 }],
+    images: [{ url: "/LO.png", width: 1200, height: 630 }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Stryk 2.0 — Lease Portfolio Management",
     description: "A premium lease-to-own platform built with Next.js, shadcn/ui, and Tailwind CSS.",
-    images: ["/screenshots/shadcn-fintech.png"],
+    images: ["/LO.png"],
   },
 };
 
@@ -46,7 +53,7 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <body className="min-h-full flex flex-col">
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange scriptProps={false}>
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
           <LeaseAgreementProvider>
             <TooltipProvider>{children}</TooltipProvider>
           </LeaseAgreementProvider>

@@ -3,6 +3,7 @@
 import { useTheme } from "next-themes"
 import { useSyncExternalStore } from "react"
 import { Button } from "@/components/ui/button"
+import { cn } from "@/lib/utils"
 
 const emptySubscribe = () => () => {}
 const useIsMounted = () =>
@@ -32,13 +33,13 @@ function ContrastIcon({ className }: { className?: string }) {
   )
 }
 
-export function ThemeToggle() {
+export function ThemeToggle({ className }: { className?: string }) {
   const { resolvedTheme, setTheme } = useTheme()
   const mounted = useIsMounted()
 
   if (!mounted) {
     return (
-      <Button variant="ghost" size="icon" className="size-8 rounded-full">
+      <Button variant="ghost" size="icon" className={cn("size-8 rounded-full", className)}>
         <span className="sr-only">Toggle theme</span>
       </Button>
     )
@@ -48,7 +49,7 @@ export function ThemeToggle() {
     <Button
       variant="ghost"
       size="icon"
-      className="size-8 rounded-full"
+      className={cn("size-8 rounded-full", className)}
       onClick={() => setTheme(resolvedTheme === "dark" ? "light" : "dark")}
     >
       <ContrastIcon className="size-[18px]" />

@@ -3,6 +3,7 @@
 import { useState } from "react"
 import Image from "next/image"
 import Link from "next/link"
+import { useRouter } from "next/navigation"
 import { motion } from "motion/react"
 import {
   LandmarkIcon,
@@ -51,6 +52,7 @@ export default function SignInPage() {
   const [showPassword, setShowPassword] = useState(false)
   const [isLoading, setIsLoading] = useState(false)
   const [isSuccess, setIsSuccess] = useState(false)
+  const router = useRouter()
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
@@ -58,7 +60,10 @@ export default function SignInPage() {
     setTimeout(() => {
       setIsLoading(false)
       setIsSuccess(true)
-      setTimeout(() => setIsSuccess(false), 2000)
+      setTimeout(() => {
+        setIsSuccess(false)
+        router.push("/vendor/dashboard")
+      }, 1200)
     }, 1500)
   }
 

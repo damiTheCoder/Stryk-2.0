@@ -44,10 +44,10 @@ export function DynamicBreadcrumb() {
           return (
             <BreadcrumbItem key={href} className="shrink-0">
               {isLast ? (
-                <BreadcrumbPage className="text-sm">{label}</BreadcrumbPage>
+                <BreadcrumbPage className="text-base md:text-sm">{label}</BreadcrumbPage>
               ) : (
                 <>
-                  <BreadcrumbLink render={<Link href={href} />} className="whitespace-nowrap text-sm">
+                  <BreadcrumbLink render={<Link href={href} />} className="whitespace-nowrap text-base md:text-sm">
                     {label}
                   </BreadcrumbLink>
                   <BreadcrumbSeparator className="shrink-0" />
