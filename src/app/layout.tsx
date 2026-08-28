@@ -4,6 +4,7 @@ import { ThemeProvider } from "next-themes";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { LeaseAgreementProvider } from "@/contexts/lease-agreement-context";
 import { PageTransition } from "@/components/page-transition";
+import { Suspense } from "react";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -58,7 +59,9 @@ export default function RootLayout({
           <LeaseAgreementProvider>
             <TooltipProvider>
               {children}
-              <PageTransition />
+              <Suspense fallback={null}>
+                <PageTransition />
+              </Suspense>
             </TooltipProvider>
           </LeaseAgreementProvider>
         </ThemeProvider>
