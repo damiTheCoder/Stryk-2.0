@@ -36,7 +36,7 @@ const data = {
       items: [
         { title: "Overview", url: "/vendor/overview", icon: <LandmarkIcon /> },
         { title: "Transactions", url: "/vendor/transactions", icon: <ArrowLeftRightIcon /> },
-        { title: "Investments", url: "/vendor/investments", icon: <TrendingUpIcon /> },
+        { title: "Asset To Liability Ratio", url: "/vendor/investments", icon: <TrendingUpIcon /> },
         { title: "Analytics", url: "/vendor/analytics", icon: <ChartAreaIcon /> },
       ],
     },

@@ -1,7 +1,6 @@
 "use client"
 
 import { useCallback, useEffect, useMemo, useRef, useState } from "react"
-import Image from "next/image"
 import { LineChart, Line } from "recharts"
 import {
   ArrowUpDown,
@@ -9,6 +8,10 @@ import {
   ArrowDown,
   TrendingUp,
   TrendingDown,
+  Smartphone,
+  Laptop,
+  Tablet,
+  Watch,
 } from "lucide-react"
 import { motion } from "motion/react"
 import {
@@ -43,6 +46,42 @@ function getLeaseInfo(h: Holding) {
   const remaining = Math.max(0, total - collected)
   const progress = total > 0 ? Math.round((collected / total) * 100) : 0
   return { collected, remaining, progress }
+}
+
+function DeviceIcon({ sector }: { sector: string }) {
+  const iconClass = "size-7 shrink-0 rounded-full bg-muted flex items-center justify-center"
+  switch (sector) {
+    case "Smartphone":
+      return (
+        <div className={iconClass}>
+          <Smartphone className="size-4 text-foreground" />
+        </div>
+      )
+    case "Laptop":
+      return (
+        <div className={iconClass}>
+          <Laptop className="size-4 text-foreground" />
+        </div>
+      )
+    case "Tablet":
+      return (
+        <div className={iconClass}>
+          <Tablet className="size-4 text-foreground" />
+        </div>
+      )
+    case "Wearable":
+      return (
+        <div className={iconClass}>
+          <Watch className="size-4 text-foreground" />
+        </div>
+      )
+    default:
+      return (
+        <div className={iconClass}>
+          <Laptop className="size-4 text-foreground" />
+        </div>
+      )
+  }
 }
 
 export function HoldingsTable() {
@@ -195,22 +234,15 @@ export function HoldingsTable() {
               return (
                 <TableRow key={h.id}>
                   <TableCell className="pl-4">
-                    <div className="flex items-center gap-2.5">
-                      <Image
-                        src={h.logo}
-                        alt={h.name}
-                        width={28}
-                        height={28}
-                        unoptimized
-                        className="rounded-full"
-                      />
-                      <div>
-                        <div className="font-medium">{h.name}</div>
-                        <div className="text-xs text-muted-foreground">
-                          {h.symbol}
-                        </div>
-                      </div>
-                    </div>
+                     <div className="flex items-center gap-2.5">
+                       <DeviceIcon sector={h.sector} />
+                       <div>
+                         <div className="font-medium">{h.name}</div>
+                         <div className="text-xs text-muted-foreground">
+                           {h.symbol}
+                         </div>
+                       </div>
+                     </div>
                   </TableCell>
                   <TableCell className="hidden text-right tabular-nums sm:table-cell">
                     {h.quantity}

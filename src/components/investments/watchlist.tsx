@@ -1,9 +1,8 @@
 "use client"
 
 import { useState } from "react"
-import Image from "next/image"
 import { LineChart, Line } from "recharts"
-import { X, Plus } from "lucide-react"
+import { X, Plus, Smartphone, Laptop, Tablet, Watch } from "lucide-react"
 import {
   Card,
   CardContent,
@@ -14,6 +13,44 @@ import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
 import { watchlistItems, type WatchlistItem } from "@/data/seed"
+
+function DeviceIcon({ name }: { name: string }) {
+  const iconClass = "size-7 shrink-0 rounded-full bg-muted flex items-center justify-center"
+  const lower = name.toLowerCase()
+  if (lower.includes("iphone") || lower.includes("galaxy") || lower.includes("smartphone")) {
+    return (
+      <div className={iconClass}>
+        <Smartphone className="size-4 text-foreground" />
+      </div>
+    )
+  }
+  if (lower.includes("macbook") || lower.includes("laptop")) {
+    return (
+      <div className={iconClass}>
+        <Laptop className="size-4 text-foreground" />
+      </div>
+    )
+  }
+  if (lower.includes("ipad") || lower.includes("tablet")) {
+    return (
+      <div className={iconClass}>
+        <Tablet className="size-4 text-foreground" />
+      </div>
+    )
+  }
+  if (lower.includes("watch") || lower.includes("wearable")) {
+    return (
+      <div className={iconClass}>
+        <Watch className="size-4 text-foreground" />
+      </div>
+    )
+  }
+  return (
+    <div className={iconClass}>
+      <Laptop className="size-4 text-foreground" />
+    </div>
+  )
+}
 
 export function Watchlist() {
   const [items, setItems] = useState<WatchlistItem[]>(watchlistItems)
@@ -32,21 +69,15 @@ export function Watchlist() {
           {items.map((w) => {
             const positive = w.dayChange >= 0
             return (
-              <div
-                key={w.id}
-                className="group flex items-center gap-3 px-4 py-2.5 transition-colors hover:bg-muted/50"
-              >
-                {/* Logo + Symbol */}
-                <Image
-                  src={w.logo}
-                  alt={w.name}
-                  width={28}
-                  height={28}
-                  className="size-7 shrink-0 rounded-full"
-                />
-                <Badge variant="secondary" className="w-14 justify-center font-mono text-[11px]">
-                  {w.symbol}
-                </Badge>
+               <div
+                 key={w.id}
+                 className="group flex items-center gap-3 px-4 py-2.5 transition-colors hover:bg-muted/50"
+               >
+                 {/* Logo + Symbol */}
+                 <DeviceIcon name={w.name} />
+                 <Badge variant="secondary" className="w-14 justify-center font-mono text-[11px]">
+                   {w.symbol}
+                 </Badge>
 
                  {/* Device */}
                 <span className="min-w-0 flex-1 truncate text-sm">

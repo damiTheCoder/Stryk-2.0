@@ -3,7 +3,6 @@
 import { useState } from "react"
 import Image from "next/image"
 import Link from "next/link"
-import { motion } from "motion/react"
 import {
   LandmarkIcon,
   MailIcon,
@@ -13,7 +12,6 @@ import {
   Loader2Icon,
   CheckIcon,
   ShieldCheckIcon,
-  UserIcon,
   StoreIcon,
   WalletIcon,
 } from "lucide-react"
@@ -40,26 +38,6 @@ import dynamic from "next/dynamic"
 const GlobeDemo = dynamic(() => import("@/components/globe-demo"), {
   ssr: false,
 })
-
-const containerVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: { staggerChildren: 0.06, delayChildren: 0.1 },
-  },
-}
-
-const itemVariants = {
-  hidden: { opacity: 0, y: 12 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.4,
-      ease: [0.25, 0.46, 0.45, 0.94] as [number, number, number, number],
-    },
-  },
-}
 
 export default function VendorRegisterPage() {
   const [showPassword, setShowPassword] = useState(false)
@@ -104,27 +82,22 @@ export default function VendorRegisterPage() {
       </div>
 
       <div className="flex flex-1 items-center justify-center bg-background px-6 py-12">
-        <motion.div
-          className="w-full max-w-sm"
-          variants={containerVariants}
-          initial="hidden"
-          animate="visible"
-        >
-          <motion.div className="mb-8 flex flex-col items-center lg:hidden" variants={itemVariants}>
+        <div className="w-full max-w-sm">
+          <div className="mb-8 flex flex-col items-center lg:hidden">
             <div className="flex size-10 items-center justify-center rounded-xl bg-primary text-primary-foreground">
               <LandmarkIcon className="size-5" />
             </div>
-          </motion.div>
+          </div>
 
-          <motion.div className="text-center" variants={itemVariants}>
+          <div className="text-center">
             <h1 className="text-2xl font-semibold tracking-tight">Vendor Onboarding</h1>
             <p className="mt-1.5 text-sm text-muted-foreground">
               Set up your business to start issuing leases
             </p>
-          </motion.div>
+          </div>
 
           <form onSubmit={handleSubmit} className="mt-8 space-y-4">
-            <motion.div variants={itemVariants} className="space-y-2">
+            <div className="space-y-2">
               <Label htmlFor="businessName">Business Name</Label>
               <InputGroup>
                 <InputGroupAddon align="inline-start">
@@ -132,9 +105,9 @@ export default function VendorRegisterPage() {
                 </InputGroupAddon>
                 <InputGroupInput id="businessName" type="text" placeholder="Acme Electronics" required />
               </InputGroup>
-            </motion.div>
+            </div>
 
-            <motion.div variants={itemVariants} className="space-y-2">
+            <div className="space-y-2">
               <Label htmlFor="email">Business Email</Label>
               <InputGroup>
                 <InputGroupAddon align="inline-start">
@@ -142,9 +115,9 @@ export default function VendorRegisterPage() {
                 </InputGroupAddon>
                 <InputGroupInput id="email" type="email" placeholder="vendor@company.com" required />
               </InputGroup>
-            </motion.div>
+            </div>
 
-            <motion.div variants={itemVariants} className="space-y-2">
+            <div className="space-y-2">
               <Label htmlFor="wallet">Settlement Wallet (USDC)</Label>
               <InputGroup>
                 <InputGroupAddon align="inline-start">
@@ -152,9 +125,9 @@ export default function VendorRegisterPage() {
                 </InputGroupAddon>
                 <InputGroupInput id="wallet" type="text" placeholder="0x..." required />
               </InputGroup>
-            </motion.div>
+            </div>
 
-            <motion.div variants={itemVariants} className="space-y-2">
+            <div className="space-y-2">
               <Label htmlFor="businessType">Business Type</Label>
               <Select value={businessType} onValueChange={(v) => { if (v) setBusinessType(v) }}>
                 <SelectTrigger id="businessType">
@@ -167,9 +140,9 @@ export default function VendorRegisterPage() {
                   <SelectItem value="distributor">Distributor</SelectItem>
                 </SelectContent>
               </Select>
-            </motion.div>
+            </div>
 
-            <motion.div variants={itemVariants} className="space-y-2">
+            <div className="space-y-2">
               <Label htmlFor="password">Password</Label>
               <InputGroup>
                 <InputGroupAddon align="inline-start">
@@ -196,12 +169,9 @@ export default function VendorRegisterPage() {
                   </InputGroupButton>
                 </InputGroupAddon>
               </InputGroup>
-            </motion.div>
+            </div>
 
-            <motion.div
-              className="flex items-start gap-2.5"
-              variants={itemVariants}
-            >
+            <div className="flex items-start gap-2.5">
               <Checkbox
                 id="terms"
                 checked={agreed}
@@ -214,13 +184,13 @@ export default function VendorRegisterPage() {
                   Terms of Service
                 </Link>{" "}
                 and{" "}
-                <Link href="#" className="font-medium text-foreground underline-offset-4 hover:underline">
+                <Link href="#" className="font-medium text-foreground underline-offset-4 transition-colors hover:underline">
                   Privacy Policy
                 </Link>
               </label>
-            </motion.div>
+            </div>
 
-            <motion.div variants={itemVariants} className="pt-1">
+            <div className="pt-1">
               <Button
                 type="submit"
                 size="lg"
@@ -241,13 +211,10 @@ export default function VendorRegisterPage() {
                   <span>Complete Onboarding</span>
                 )}
               </Button>
-            </motion.div>
+            </div>
           </form>
 
-          <motion.p
-            className="mt-6 text-center text-sm text-muted-foreground"
-            variants={itemVariants}
-          >
+          <p className="mt-6 text-center text-sm text-muted-foreground">
             Already have an account?{" "}
             <Link
               href="/sign-in"
@@ -255,16 +222,13 @@ export default function VendorRegisterPage() {
             >
               Sign in
             </Link>
-          </motion.p>
+          </p>
 
-          <motion.div
-            className="mt-8 flex items-center justify-center gap-1.5 text-xs text-muted-foreground/60"
-            variants={itemVariants}
-          >
+          <div className="mt-8 flex items-center justify-center gap-1.5 text-xs text-muted-foreground/60">
             <ShieldCheckIcon className="size-3.5" />
             <span>256-bit SSL encrypted</span>
-          </motion.div>
-        </motion.div>
+          </div>
+        </div>
       </div>
     </div>
   )

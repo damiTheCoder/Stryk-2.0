@@ -4,7 +4,6 @@ import { useState } from "react"
 import Image from "next/image"
 import Link from "next/link"
 import { useRouter } from "next/navigation"
-import { motion } from "motion/react"
 import {
   LandmarkIcon,
   MailIcon,
@@ -27,26 +26,6 @@ import dynamic from "next/dynamic"
 const GlobeDemo = dynamic(() => import("@/components/globe-demo"), {
   ssr: false,
 })
-
-const containerVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: { staggerChildren: 0.06, delayChildren: 0.1 },
-  },
-}
-
-const itemVariants = {
-  hidden: { opacity: 0, y: 12 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.4,
-      ease: [0.25, 0.46, 0.45, 0.94] as [number, number, number, number],
-    },
-  },
-}
 
 export default function SignInPage() {
   const [showPassword, setShowPassword] = useState(false)
@@ -92,25 +71,20 @@ export default function SignInPage() {
       </div>
 
       <div className="flex flex-1 items-center justify-center bg-background px-6 py-12">
-        <motion.div
-          className="w-full max-w-sm"
-          variants={containerVariants}
-          initial="hidden"
-          animate="visible"
-        >
-          <motion.div className="mb-8 flex flex-col items-center lg:hidden" variants={itemVariants}>
+        <div className="w-full max-w-sm">
+          <div className="mb-8 flex flex-col items-center lg:hidden">
             <div className="flex size-10 items-center justify-center rounded-xl bg-primary text-primary-foreground">
               <LandmarkIcon className="size-5" />
             </div>
-          </motion.div>
+          </div>
 
-          <motion.div className="text-center" variants={itemVariants}>
+          <div className="text-center">
             <h1 className="text-2xl font-semibold tracking-tight">Welcome back</h1>
             <p className="mt-1.5 text-sm text-muted-foreground">Sign in to your vendor account</p>
-          </motion.div>
+          </div>
 
           <form onSubmit={handleSubmit} className="mt-8 space-y-4">
-            <motion.div variants={itemVariants}>
+            <div>
               <label htmlFor="email" className="mb-1.5 block text-sm font-medium">
                 Email
               </label>
@@ -125,9 +99,9 @@ export default function SignInPage() {
                   required
                 />
               </InputGroup>
-            </motion.div>
+            </div>
 
-            <motion.div variants={itemVariants}>
+            <div>
               <div className="mb-1.5 flex items-center justify-between">
                 <label htmlFor="password" className="text-sm font-medium">
                   Password
@@ -164,9 +138,9 @@ export default function SignInPage() {
                   </InputGroupButton>
                 </InputGroupAddon>
               </InputGroup>
-            </motion.div>
+            </div>
 
-            <motion.div variants={itemVariants} className="pt-1">
+            <div className="pt-1">
               <Button
                 type="submit"
                 size="lg"
@@ -187,13 +161,10 @@ export default function SignInPage() {
                   <span>Sign in</span>
                 )}
               </Button>
-            </motion.div>
+            </div>
           </form>
 
-          <motion.p
-            className="mt-6 text-center text-sm text-muted-foreground"
-            variants={itemVariants}
-          >
+          <p className="mt-6 text-center text-sm text-muted-foreground">
             Don&apos;t have an account?{" "}
             <Link
               href="/auth/register"
@@ -201,16 +172,13 @@ export default function SignInPage() {
             >
               Vendor onboarding
             </Link>
-          </motion.p>
+          </p>
 
-          <motion.div
-            className="mt-8 flex items-center justify-center gap-1.5 text-xs text-muted-foreground/60"
-            variants={itemVariants}
-          >
+          <div className="mt-8 flex items-center justify-center gap-1.5 text-xs text-muted-foreground/60">
             <ShieldCheckIcon className="size-3.5" />
             <span>256-bit SSL encrypted</span>
-          </motion.div>
-        </motion.div>
+          </div>
+        </div>
       </div>
     </div>
   )
