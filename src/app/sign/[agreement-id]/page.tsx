@@ -11,6 +11,7 @@ import { leaseAgreements } from "@/data/seed"
 import { cn } from "@/lib/utils"
 import { USDCIcon } from "@/components/ui/usdc-icon"
 import { useLeaseAgreement } from "@/contexts/lease-agreement-context"
+import { useState, useEffect } from "react"
 
 function formatUSDC(value: number) {
   return value.toLocaleString()
@@ -31,6 +32,14 @@ export default function SignAgreementPage() {
   const agreementId = params["agreement-id"] as string
   const { draft } = useLeaseAgreement()
   const storageDraft = getDraftFromStorage(agreementId)
+  const [isMobile, setIsMobile] = useState(false)
+
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 640)
+    checkMobile()
+    window.addEventListener("resize", checkMobile)
+    return () => window.removeEventListener("resize", checkMobile)
+  }, [])
 
   const agreement = draft && draft.id.toLowerCase() === agreementId.toLowerCase()
     ? null
@@ -75,19 +84,19 @@ export default function SignAgreementPage() {
         </CardHeader>
         <CardContent className="space-y-4">
           <div className="grid gap-4 sm:grid-cols-2">
-            <div className="rounded-lg bg-muted/50 p-4">
+            <div className={`rounded-lg p-4 ${isMobile ? "" : "bg-muted/50"}`}>
               <p className="text-xs text-muted-foreground">Device Price</p>
-               <p className="text-lg font-semibold tabular-nums flex items-center gap-1"><USDCIcon /> {formatUSDC(displayAgreement.devicePrice)}</p>
+               <p className="text-lg font-semibold tabular-nums flex items-center gap-1.5"><USDCIcon /> {formatUSDC(displayAgreement.devicePrice)}</p>
             </div>
-            <div className="rounded-lg bg-muted/50 p-4">
+            <div className={`rounded-lg p-4 ${isMobile ? "" : "bg-muted/50"}`}>
               <p className="text-xs text-muted-foreground">Down Payment</p>
-               <p className="text-lg font-semibold tabular-nums flex items-center gap-1"><USDCIcon /> {formatUSDC(displayAgreement.downPaymentAmount)} ({displayAgreement.downPaymentPercent}%)</p>
+               <p className="text-lg font-semibold tabular-nums flex items-center gap-1.5"><USDCIcon /> {formatUSDC(displayAgreement.downPaymentAmount)} ({displayAgreement.downPaymentPercent}%)</p>
             </div>
-            <div className="rounded-lg bg-muted/50 p-4">
+            <div className={`rounded-lg p-4 ${isMobile ? "" : "bg-muted/50"}`}>
               <p className="text-xs text-muted-foreground">Monthly Installment</p>
-               <p className="text-lg font-semibold tabular-nums flex items-center gap-1"><USDCIcon /> {formatUSDC(displayAgreement.monthlyInstallment)}</p>
+               <p className="text-lg font-semibold tabular-nums flex items-center gap-1.5"><USDCIcon /> {formatUSDC(displayAgreement.monthlyInstallment)}</p>
             </div>
-            <div className="rounded-lg bg-muted/50 p-4">
+            <div className={`rounded-lg p-4 ${isMobile ? "" : "bg-muted/50"}`}>
               <p className="text-xs text-muted-foreground">Tenure</p>
                <p className="text-lg font-semibold tabular-nums">{displayAgreement.tenureMonths} months</p>
             </div>
@@ -99,28 +108,28 @@ export default function SignAgreementPage() {
             <div className="space-y-3">
               <p className="text-xs font-medium uppercase tracking-wider text-muted-foreground">Customer Details</p>
               <div className="grid gap-3 sm:grid-cols-2">
-                <div className="rounded-lg bg-muted/50 p-3">
+                <div className={`rounded-lg p-3 ${isMobile ? "" : "bg-muted/50"}`}>
                   <div className="flex items-center gap-2 text-xs text-muted-foreground">
                     <UserIcon className="size-3" />
                     Name
                   </div>
                   <p className="text-sm font-medium">{displayAgreement.customerName}</p>
                 </div>
-                <div className="rounded-lg bg-muted/50 p-3">
+                <div className={`rounded-lg p-3 ${isMobile ? "" : "bg-muted/50"}`}>
                   <div className="flex items-center gap-2 text-xs text-muted-foreground">
                     <PhoneIcon className="size-3" />
                     Phone
                   </div>
                   <p className="text-sm font-medium">{displayAgreement.customerPhone || "—"}</p>
                 </div>
-                <div className="rounded-lg bg-muted/50 p-3">
+                <div className={`rounded-lg p-3 ${isMobile ? "" : "bg-muted/50"}`}>
                   <div className="flex items-center gap-2 text-xs text-muted-foreground">
                     <PhoneIcon className="size-3" />
                     WhatsApp
                   </div>
                   <p className="text-sm font-medium">{displayAgreement.customerWhatsApp || "—"}</p>
                 </div>
-                <div className="rounded-lg bg-muted/50 p-3">
+                <div className={`rounded-lg p-3 ${isMobile ? "" : "bg-muted/50"}`}>
                   <div className="flex items-center gap-2 text-xs text-muted-foreground">
                     <HomeIcon className="size-3" />
                     Address
@@ -135,14 +144,14 @@ export default function SignAgreementPage() {
             <div className="space-y-3">
               <p className="text-xs font-medium uppercase tracking-wider text-muted-foreground">Guarantor 1</p>
               <div className="grid gap-3 sm:grid-cols-2">
-                <div className="rounded-lg bg-muted/50 p-3">
+                <div className={`rounded-lg p-3 ${isMobile ? "" : "bg-muted/50"}`}>
                   <div className="flex items-center gap-2 text-xs text-muted-foreground">
                     <PhoneIcon className="size-3" />
                     Phone
                   </div>
                   <p className="text-sm font-medium">{displayAgreement.guarantor1Phone || "—"}</p>
                 </div>
-                <div className="rounded-lg bg-muted/50 p-3">
+                <div className={`rounded-lg p-3 ${isMobile ? "" : "bg-muted/50"}`}>
                   <div className="flex items-center gap-2 text-xs text-muted-foreground">
                     <HomeIcon className="size-3" />
                     House Address
@@ -157,14 +166,14 @@ export default function SignAgreementPage() {
             <div className="space-y-3">
               <p className="text-xs font-medium uppercase tracking-wider text-muted-foreground">Guarantor 2</p>
               <div className="grid gap-3 sm:grid-cols-2">
-                <div className="rounded-lg bg-muted/50 p-3">
+                <div className={`rounded-lg p-3 ${isMobile ? "" : "bg-muted/50"}`}>
                   <div className="flex items-center gap-2 text-xs text-muted-foreground">
                     <PhoneIcon className="size-3" />
                     Phone
                   </div>
                   <p className="text-sm font-medium">{displayAgreement.guarantor2Phone || "—"}</p>
                 </div>
-                <div className="rounded-lg bg-muted/50 p-3">
+                <div className={`rounded-lg p-3 ${isMobile ? "" : "bg-muted/50"}`}>
                   <div className="flex items-center gap-2 text-xs text-muted-foreground">
                     <HomeIcon className="size-3" />
                     House Address

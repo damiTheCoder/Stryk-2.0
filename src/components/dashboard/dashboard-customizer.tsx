@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import {
   DndContext,
   pointerWithin,
@@ -96,8 +96,10 @@ function SortableWidget({
 
 export function DashboardCustomizer() {
   const [editing, setEditing] = useState(false)
-  const [blocks, setBlocks] = useState(() => {
-    if (typeof window === "undefined") return defaultBlocks
+  const [blocks, setBlocks] = useState<Block[]>(defaultBlocks)
+  const [activeId, setActiveId] = useState<string | null>(null)
+
+  useEffect(() => {
     try {
       const saved = localStorage.getItem(STORAGE_KEY)
       if (saved) {
@@ -108,12 +110,10 @@ export function DashboardCustomizer() {
         for (const b of defaultBlocks) {
           if (!reordered.find((r) => r.id === b.id)) reordered.push(b)
         }
-        return reordered
+        setBlocks(reordered)
       }
     } catch {}
-    return defaultBlocks
-  })
-  const [activeId, setActiveId] = useState<string | null>(null)
+  }, [])
 
   const sensors = useSensors(
     useSensor(PointerSensor, { activationConstraint: { distance: 8 } })

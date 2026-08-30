@@ -20,23 +20,34 @@ const payouts = [
 ]
 
 const metrics = [
-  { title: "Total Payouts", value: <span className="inline-flex items-center gap-1"><USDCIcon /> {formatUSDC(vendorMetrics.totalPayouts)}</span>, icon: LandmarkIcon, accent: "text-blue-600" },
-  { title: "MRR", value: <span className="inline-flex items-center gap-1"><USDCIcon /> {formatUSDC(vendorMetrics.mrr)}</span>, icon: DollarSignIcon, accent: "text-blue-600" },
+  { title: "Total Payouts", value: <span className="inline-flex items-center gap-1.5"><USDCIcon /> {formatUSDC(vendorMetrics.totalPayouts)}</span>, icon: LandmarkIcon, accent: "text-blue-600" },
+  { title: "MRR", value: <span className="inline-flex items-center gap-1.5"><USDCIcon /> {formatUSDC(vendorMetrics.mrr)}</span>, icon: DollarSignIcon, accent: "text-blue-600" },
   { title: "Active Leases", value: vendorMetrics.totalActiveLeases.toString(), icon: UsersIcon, accent: "text-blue-600" },
   { title: "Default Rate", value: `${vendorMetrics.defaultRate}%`, icon: TrendingDownIcon, accent: "text-blue-600" },
 ]
 
 export default function VendorPayoutsPage() {
   return (
-    <div className="flex flex-1 flex-col gap-6 p-4 pt-0">
-      <div>
+    <div className="flex flex-1 flex-col gap-6 md:p-6 md:pt-0">
+      <div className="px-4 md:px-0">
         <h1 className="text-2xl font-semibold tracking-tight">Settlements & Payouts</h1>
         <p className="text-muted-foreground text-sm">
           History of stablecoin revenue disbursements to your corporate wallet.
         </p>
       </div>
 
-      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+      {/* Mobile bordered rows */}
+      <div className="sm:hidden divide-y">
+        {metrics.map((metric) => (
+          <div key={metric.title} className="py-4 px-4">
+            <span className="text-sm text-muted-foreground">{metric.title}</span>
+            <div className="text-base font-semibold flex items-center gap-1.5 mt-1">{metric.value}</div>
+          </div>
+        ))}
+      </div>
+
+      {/* Desktop cards */}
+      <div className="hidden sm:grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
         {metrics.map((metric) => (
           <Card key={metric.title} size="sm">
             <CardHeader className="flex flex-row items-center justify-between pb-2">
@@ -71,7 +82,7 @@ export default function VendorPayoutsPage() {
               {payouts.map((payout) => (
                 <TableRow key={payout.id}>
                   <TableCell className="tabular-nums">{payout.date}</TableCell>
-                  <TableCell className="font-semibold tabular-nums"><span className="inline-flex items-center gap-1"><USDCIcon /> {formatUSDC(payout.amount)}</span></TableCell>
+                  <TableCell className="font-semibold tabular-nums"><span className="inline-flex items-center gap-1.5"><USDCIcon /> {formatUSDC(payout.amount)}</span></TableCell>
                   <TableCell>
                     <code className="rounded bg-muted px-1.5 py-0.5 text-xs">{payout.txHash}</code>
                   </TableCell>

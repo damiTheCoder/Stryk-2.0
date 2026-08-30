@@ -41,7 +41,7 @@ export default function SignInPage() {
       setIsSuccess(true)
       setTimeout(() => {
         setIsSuccess(false)
-        router.push("/vendor/dashboard")
+        router.push("/vendor/overview")
       }, 1200)
     }, 1500)
   }

@@ -146,3 +146,13 @@
 @utility animate-marquee {
   animation: marquee 40s linear infinite;
 }
+
+@media (max-width: 639px) {
+  main [class*="bg-muted"],
+  main [class*="bg-card"],
+  main [class*="bg-zinc"],
+  main [class*="bg-slate"],
+  main [class*="bg-gray"] {
+    background-color: transparent !important;
+  }
+}

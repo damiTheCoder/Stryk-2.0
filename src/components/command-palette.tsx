@@ -76,7 +76,6 @@ export function CommandPalette() {
 
           <CommandGroup heading="Pages">
             {[
-              { label: "Vendor Dashboard", icon: StoreIcon, href: "/vendor/dashboard" },
               { label: "Overview", icon: LayoutDashboardIcon, href: "/vendor/overview" },
               { label: "Transactions", icon: ArrowLeftRightIcon, href: "/vendor/transactions" },
               { label: "Investments", icon: TrendingUpIcon, href: "/vendor/investments" },

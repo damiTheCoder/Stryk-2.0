@@ -25,7 +25,7 @@ const data = {
     {
       label: "Vendor Portal",
       items: [
-        { title: "Dashboard", url: "/vendor/dashboard", icon: <StoreIcon /> },
+        { title: "Dashboard", url: "/vendor/overview", icon: <StoreIcon /> },
         { title: "Active Leases", url: "/vendor/leases", icon: <FileTextIcon /> },
         { title: "New Lease", url: "/vendor/leases/new", icon: <PlusIcon /> },
         { title: "Settlements", url: "/vendor/payouts", icon: <WalletIcon /> },
@@ -34,7 +34,6 @@ const data = {
     {
       label: "Financial Portal",
       items: [
-        { title: "Overview", url: "/vendor/overview", icon: <LandmarkIcon /> },
         { title: "Transactions", url: "/vendor/transactions", icon: <ArrowLeftRightIcon /> },
         { title: "Asset To Liability Ratio", url: "/vendor/investments", icon: <TrendingUpIcon /> },
         { title: "Analytics", url: "/vendor/analytics", icon: <ChartAreaIcon /> },
@@ -59,9 +58,9 @@ export function LeaseSidebar({ role }: { role: "vendor" | "consumer" }) {
       <SidebarHeader>
         <SidebarMenu>
           <SidebarMenuItem>
-            <SidebarMenuButton size="lg" render={<Link href={role === "vendor" ? "/vendor/dashboard" : "/portal"} />}>
+            <SidebarMenuButton size="lg" render={<Link href={role === "vendor" ? "/vendor/overview" : "/portal"} />}>
               <div className="flex aspect-square size-10 items-center justify-center">
-                <Image src="/LO.png" alt="Stryk" width={32} height={32} className="size-8 object-contain rounded-lg" />
+                <Image src="/LO.png" alt="Stryk" width={32} height={32} className="size-8 object-contain rounded-lg border border-black/10 dark:border-white/10" />
               </div>
               <div className="grid flex-1 text-left text-base leading-tight">
                 <span className="truncate font-semibold">Stryk</span>

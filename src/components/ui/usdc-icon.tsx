@@ -7,9 +7,9 @@ export function USDCIcon({ className }: { className?: string }) {
     <Image
       src="/usdc.png"
       alt="USDC"
-      width={16}
-      height={16}
-      className={`size-4 rounded-full object-contain align-middle ${className || ""}`}
+      width={20}
+      height={20}
+      className={`size-5 rounded-full object-contain align-middle ${className || ""}`}
     />
   )
 }

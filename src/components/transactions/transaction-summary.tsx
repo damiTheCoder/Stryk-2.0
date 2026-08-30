@@ -61,28 +61,48 @@ export function TransactionSummary({ transactions }: TransactionSummaryProps) {
   ]
 
   return (
-    <div className="grid grid-cols-2 gap-3 lg:grid-cols-4">
-      {cards.map((card) => (
-        <div
-          key={card.label}
-          className="flex items-center gap-3 rounded-xl bg-card p-3"
-        >
-          <div
-            className={cn(
-              "flex size-9 shrink-0 items-center justify-center rounded-full",
-              card.bg
-            )}
-          >
-            <card.icon className={cn("size-4", card.color)} />
-          </div>
-          <div className="min-w-0">
-            <p className="text-xs text-muted-foreground">{card.label}</p>
-            <p className="tabular-nums text-base font-semibold tracking-tight">
+    <>
+      {/* Mobile bordered rows */}
+      <div className="sm:hidden divide-y">
+        {cards.map((card) => (
+          <div key={card.label} className="py-4">
+            <div className="flex items-center gap-2 mb-1">
+              <div className={cn("flex size-8 shrink-0 items-center justify-center rounded-full", card.bg)}>
+                <card.icon className={cn("size-4", card.color)} />
+              </div>
+              <span className="text-sm text-muted-foreground">{card.label}</span>
+            </div>
+            <span className="tabular-nums text-base font-semibold tracking-tight">
               {card.value}
-            </p>
+            </span>
           </div>
-        </div>
-      ))}
-    </div>
+        ))}
+      </div>
+
+      {/* Desktop cards */}
+      <div className="hidden sm:grid grid-cols-2 gap-3 lg:grid-cols-4">
+        {cards.map((card) => (
+          <div
+            key={card.label}
+            className="flex items-center gap-3 rounded-xl bg-card p-3"
+          >
+            <div
+              className={cn(
+                "flex size-9 shrink-0 items-center justify-center rounded-full",
+                card.bg
+              )}
+            >
+              <card.icon className={cn("size-4", card.color)} />
+            </div>
+            <div className="min-w-0">
+              <p className="text-xs text-muted-foreground">{card.label}</p>
+              <p className="tabular-nums text-base font-semibold tracking-tight">
+                {card.value}
+              </p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </>
   )
 }
