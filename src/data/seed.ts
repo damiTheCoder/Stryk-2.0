@@ -471,7 +471,7 @@ export type AiInsight = {
 }
 
 export const aiInsights: AiInsight[] = [
-  { id: "ai1", text: "Smartphone lease originations up 19% this month — driven by iPhone 16 Pro demand.", trend: "up", percentChange: 19, category: "Originators" },
+  { id: "ai1", text: "Smartphone Buy Now Pay Later originations up 19% this month — driven by iPhone 16 Pro demand.", trend: "up", percentChange: 19, category: "Originators" },
   { id: "ai2", text: "Default rate dropped 13% — portfolio health improved after tightening eligibility rules.", trend: "down", percentChange: 13, category: "Risk" },
   { id: "ai3", text: "3 agreements flagged for review with upcoming due dates this week.", trend: "neutral", percentChange: 0, category: "Collections" },
   { id: "ai4", text: "Settlement volume jumped 37% — USDC payouts processing faster than last month.", trend: "up", percentChange: 37, category: "Payouts" },
@@ -526,11 +526,11 @@ export type WatchlistItem = {
 }
 
 export const watchlistItems: WatchlistItem[] = [
-  { id: "w1", symbol: "iPH16", name: "iPhone 16 Pro Lease", currentPrice: 1199, dayChange: 1.24, logo: "/logos/iphone.jpg", sparklineData: generateSparkline(1199, 8) },
-  { id: "w2", symbol: "MBA13", name: "MacBook Air M3 Lease", currentPrice: 1099, dayChange: -0.87, logo: "/logos/macbook.jpg", sparklineData: generateSparkline(1099, 4) },
-  { id: "w3", symbol: "GS25U", name: "Galaxy S25 Ultra Lease", currentPrice: 1299, dayChange: 0.56, logo: "/logos/galaxy.jpg", sparklineData: generateSparkline(1299, 3) },
-  { id: "w4", symbol: "iPPR4", name: "iPad Pro M4 Lease", currentPrice: 1099, dayChange: -1.32, logo: "/logos/ipad.jpg", sparklineData: generateSparkline(1099, 2) },
-  { id: "w5", symbol: "MBP14", name: "MacBook Pro 14 Lease", currentPrice: 1999, dayChange: 2.15, logo: "/logos/macbook-pro.jpg", sparklineData: generateSparkline(1999, 3) },
+  { id: "w1", symbol: "iPH16", name: "iPhone 16 Pro Buy Now Pay Later", currentPrice: 1199, dayChange: 1.24, logo: "/logos/iphone.jpg", sparklineData: generateSparkline(1199, 8) },
+  { id: "w2", symbol: "MBA13", name: "MacBook Air M3 Buy Now Pay Later", currentPrice: 1099, dayChange: -0.87, logo: "/logos/macbook.jpg", sparklineData: generateSparkline(1099, 4) },
+  { id: "w3", symbol: "GS25U", name: "Galaxy S25 Ultra Buy Now Pay Later", currentPrice: 1299, dayChange: 0.56, logo: "/logos/galaxy.jpg", sparklineData: generateSparkline(1299, 3) },
+  { id: "w4", symbol: "iPPR4", name: "iPad Pro M4 Buy Now Pay Later", currentPrice: 1099, dayChange: -1.32, logo: "/logos/ipad.jpg", sparklineData: generateSparkline(1099, 2) },
+  { id: "w5", symbol: "MBP14", name: "MacBook Pro 14 Buy Now Pay Later", currentPrice: 1999, dayChange: 2.15, logo: "/logos/macbook-pro.jpg", sparklineData: generateSparkline(1999, 3) },
 ]
 
 export type PortfolioHistoryPoint = { date: string; portfolio: number; sp500: number }
@@ -942,7 +942,7 @@ export const financialHealthScore = {
   factors: [
     { id: "hf1", label: "Collection Rate", score: 85, maxScore: 100, status: "excellent" as const, description: "92% of installments collected on time this month" },
     { id: "hf2", label: "Default Rate", score: 72, maxScore: 100, status: "good" as const, description: "Default rate of 1.2% — well within healthy range" },
-    { id: "hf3", label: "Portfolio Growth", score: 90, maxScore: 100, status: "excellent" as const, description: "Active lease portfolio up 12.4% MoM" },
+    { id: "hf3", label: "Portfolio Growth", score: 90, maxScore: 100, status: "excellent" as const, description: "Active Buy Now Pay Later portfolio up 12.4% MoM" },
     { id: "hf4", label: "Settlement Speed", score: 68, maxScore: 100, status: "good" as const, description: "Average USDC settlement time: 2.4 hours" },
     { id: "hf5", label: "Customer Retention", score: 55, maxScore: 100, status: "fair" as const, description: "Repeat customer rate at 34% — aim for 50%" },
     { id: "hf6", label: "Compliance", score: 95, maxScore: 100, status: "excellent" as const, description: "All agreements compliant with KYC/AML checks" },

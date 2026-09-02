@@ -111,7 +111,7 @@ export default function CustomerDetailPage() {
             <div>
               <h1 className="text-xl font-semibold tracking-tight md:text-2xl">{customer.consumerName}</h1>
               <p className="text-muted-foreground text-sm">
-                Customer ID: {customerId} · {customerLeases.length} lease{customerLeases.length !== 1 ? "s" : ""}
+                Customer ID: {customerId} · {customerLeases.length} Buy Now Pay Later agreement{customerLeases.length !== 1 ? "s" : ""}
               </p>
             </div>
           </div>
@@ -152,7 +152,7 @@ export default function CustomerDetailPage() {
 
       <Card>
         <CardHeader>
-          <CardTitle className="text-base">Lease Agreements</CardTitle>
+          <CardTitle className="text-base">Buy Now Pay Later Agreements</CardTitle>
         </CardHeader>
         <CardContent>
           <div className="overflow-x-auto">

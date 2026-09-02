@@ -95,7 +95,7 @@ export default function NewLeasePage() {
           </Button>
         </Link>
         <div>
-          <h1 className="text-2xl font-semibold tracking-tight">Create Lease Agreement</h1>
+          <h1 className="text-2xl font-semibold tracking-tight">Create Buy Now Pay Later Agreement</h1>
           <p className="text-muted-foreground text-sm">
             Configure terms and generate a signing link for the customer.
           </p>
@@ -323,7 +323,7 @@ export default function NewLeasePage() {
               <Badge variant="secondary">Agreement ID: {agreementId}</Badge>
             </div>
             <p className="text-sm text-muted-foreground">
-              Share this link with {customerName} to review and sign the lease agreement.
+              Share this link with {customerName} to review and sign the Buy Now Pay Later agreement.
             </p>
             <div className="flex items-center gap-2">
               <Input readOnly value={`${typeof window !== "undefined" ? window.location.origin : ""}/sign/${agreementId.toLowerCase()}`} />

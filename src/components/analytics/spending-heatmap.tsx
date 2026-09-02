@@ -78,7 +78,7 @@ export function SpendingHeatmap() {
       <CardHeader>
         <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
           <div>
-            <CardTitle>Lease Activity</CardTitle>
+            <CardTitle>Buy Now Pay Later Activity</CardTitle>
             <CardDescription>
               <span className="tabular-nums font-medium text-foreground">
                 ${yearTotal.toLocaleString()}

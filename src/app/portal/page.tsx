@@ -30,14 +30,14 @@ export default function ConsumerPortalPage() {
       <div>
         <h1 className="text-2xl font-semibold tracking-tight">Consumer Portal</h1>
         <p className="text-muted-foreground text-sm">
-          View your active lease and manage <span className="inline-flex items-center gap-1"><USDCIcon /></span> installment payments.
+          View your active Buy Now Pay Later agreements and manage <span className="inline-flex items-center gap-1"><USDCIcon /></span> installment payments.
         </p>
       </div>
 
       {activeLeases.length === 0 ? (
         <Card>
           <CardContent className="py-12 text-center">
-            <p className="text-muted-foreground">No active leases found.</p>
+            <p className="text-muted-foreground">No active Buy Now Pay Later agreements found.</p>
           </CardContent>
         </Card>
       ) : (

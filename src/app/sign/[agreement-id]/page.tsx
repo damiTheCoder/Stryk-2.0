@@ -52,7 +52,7 @@ export default function SignAgreementPage() {
       <div className="flex flex-1 items-center justify-center p-4 text-center">
         <div>
           <h1 className="text-2xl font-semibold">Agreement Not Found</h1>
-          <p className="mt-2 text-muted-foreground">This lease agreement link is invalid or has expired.</p>
+          <p className="mt-2 text-muted-foreground">This Buy Now Pay Later agreement link is invalid or has expired.</p>
         </div>
       </div>
     )
@@ -66,9 +66,9 @@ export default function SignAgreementPage() {
         <div className="mx-auto flex size-12 items-center justify-center rounded-full bg-primary/10 text-primary">
           <SmartphoneIcon className="size-6" />
         </div>
-        <h1 className="mt-4 text-2xl font-semibold tracking-tight">Lease Agreement</h1>
+        <h1 className="mt-4 text-2xl font-semibold tracking-tight">Buy Now Pay Later Agreement</h1>
         <p className="text-muted-foreground text-sm">
-          Review your payment plan and sign to accept the lease.
+          Review your payment plan and sign to accept this Buy Now Pay Later agreement.
         </p>
       </div>
 

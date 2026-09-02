@@ -33,7 +33,7 @@ export function QuickTransfer() {
       <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-4">
         <Link href="/vendor/leases">
           <Button variant="ghost" size="sm" className="h-auto gap-1 px-0 text-xs text-muted-foreground">
-            View all Customer leases
+            View all Customer Buy Now Pay Later agreements
             <ChevronRightIcon className="size-3" />
           </Button>
         </Link>

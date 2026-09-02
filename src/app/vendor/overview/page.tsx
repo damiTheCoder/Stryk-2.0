@@ -42,7 +42,7 @@ export default function Page() {
   return (
     <div className="flex flex-1 flex-col gap-4">
       {/* Metrics Row */}
-      <div className="px-4 md:px-0">
+      <div className="px-4 md:px-6">
         {/* Mobile bordered rows */}
         <div className="sm:hidden divide-y">
           {metrics.map((metric) => (

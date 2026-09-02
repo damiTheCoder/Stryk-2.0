@@ -53,7 +53,7 @@ export default function SignInPage() {
           <div className="flex size-8 items-center justify-center rounded-lg bg-white text-black">
             <LandmarkIcon className="size-4" />
           </div>
-          <span className="text-sm font-semibold text-white">Stryk Lease</span>
+          <span className="text-sm font-semibold text-white">Stryk Buy Now Pay Later</span>
         </Link>
 
         <div className="absolute inset-0 flex items-center justify-center overflow-hidden">

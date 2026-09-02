@@ -181,7 +181,7 @@ export function HoldingsTable() {
   return (
     <Card>
       <CardHeader>
-        <CardTitle>Lease Portfolio</CardTitle>
+        <CardTitle>Buy Now Pay Later Portfolio</CardTitle>
       </CardHeader>
       <CardContent className="px-0">
         <div className="overflow-x-auto">

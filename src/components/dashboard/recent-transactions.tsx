@@ -28,7 +28,7 @@ export function RecentTransactions() {
     <Card>
       <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-4">
         <CardTitle className="text-base font-semibold">
-          Lease Payments
+          Buy Now Pay Later Payments
         </CardTitle>
         <Button variant="outline" size="sm" className="h-8 gap-1 text-xs">
           See All
@@ -41,7 +41,7 @@ export function RecentTransactions() {
             {/* Header */}
             <div className="grid grid-cols-[1fr_140px_100px_120px_32px] gap-4 border-b pb-2 text-xs font-medium uppercase tracking-wider text-muted-foreground">
               <span>Customer</span>
-              <span className="hidden sm:inline">Lease ID</span>
+              <span className="hidden sm:inline">Agreement ID</span>
               <span className="text-right">Amount</span>
               <span className="hidden md:inline">Date</span>
               <span />

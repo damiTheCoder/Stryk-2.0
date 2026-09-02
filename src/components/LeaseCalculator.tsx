@@ -55,7 +55,7 @@ export function LeaseCalculator({ onApply, className }: LeaseCalculatorProps) {
             <Calculator className="size-4" />
           </div>
           <div>
-            <CardTitle className="text-base">Lease Calculator</CardTitle>
+            <CardTitle className="text-base">Buy Now Pay Later Calculator</CardTitle>
             <CardDescription>Configure your stablecoin financing plan</CardDescription>
           </div>
         </div>
@@ -134,7 +134,7 @@ export function LeaseCalculator({ onApply, className }: LeaseCalculatorProps) {
       <CardFooter>
         <Button className="w-full" size="lg" onClick={() => onApply?.(values)}>
           <Wallet className="mr-2 size-4" />
-          Apply for Lease
+          Apply for Buy Now Pay Later
         </Button>
       </CardFooter>
     </Card>

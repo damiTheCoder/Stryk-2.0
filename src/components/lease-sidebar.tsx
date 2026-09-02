@@ -26,8 +26,8 @@ const data = {
       label: "Vendor Portal",
       items: [
         { title: "Dashboard", url: "/vendor/overview", icon: <StoreIcon /> },
-        { title: "Active Leases", url: "/vendor/leases", icon: <FileTextIcon /> },
-        { title: "New Lease", url: "/vendor/leases/new", icon: <PlusIcon /> },
+        { title: "Active Agreements", url: "/vendor/leases", icon: <FileTextIcon /> },
+        { title: "New Agreement", url: "/vendor/leases/new", icon: <PlusIcon /> },
         { title: "Settlements", url: "/vendor/payouts", icon: <WalletIcon /> },
       ],
     },

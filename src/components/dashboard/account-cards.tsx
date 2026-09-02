@@ -53,9 +53,9 @@ const initialCards = [
 ]
 
 const newCardOptions = [
-  { value: "smartphone", label: "Smartphone Lease", currency: "USDC", style: "bg-emerald-600 text-white", icon: <SmartphoneIcon className="size-5 opacity-30" />, chipColor: "bg-white/20" },
-  { value: "laptop", label: "Laptop Lease", currency: "USDC", style: "bg-violet-600 text-white", icon: <LandmarkIcon className="size-5 opacity-30" />, chipColor: "bg-white/20" },
-  { value: "tablet", label: "Tablet Lease", currency: "USDC", style: "bg-amber-600 text-white", icon: <CreditCardIcon className="size-5 opacity-30" />, chipColor: "bg-white/20" },
+  { value: "smartphone", label: "Smartphone Buy Now Pay Later", currency: "USDC", style: "bg-emerald-600 text-white", icon: <SmartphoneIcon className="size-5 opacity-30" />, chipColor: "bg-white/20" },
+  { value: "laptop", label: "Laptop Buy Now Pay Later", currency: "USDC", style: "bg-violet-600 text-white", icon: <LandmarkIcon className="size-5 opacity-30" />, chipColor: "bg-white/20" },
+  { value: "tablet", label: "Tablet Buy Now Pay Later", currency: "USDC", style: "bg-amber-600 text-white", icon: <CreditCardIcon className="size-5 opacity-30" />, chipColor: "bg-white/20" },
 ]
 
 export function AccountCards() {
@@ -224,7 +224,7 @@ export function AccountCards() {
                    <Button
                      className="h-9 gap-2 text-xs" onClick={handleAdd}>
                      <PlusIcon className="size-3.5" />
-                     New Lease
+                     New Buy Now Pay Later Agreement
                    </Button>
                 </div>
               )}
@@ -236,7 +236,7 @@ export function AccountCards() {
                    <div className="flex items-center justify-between">
                      <div className="flex items-center gap-2 text-xs text-muted-foreground">
                        <CreditCardIcon className="size-3.5" />
-                       <span>{cards.length} active leases</span>
+                       <span>{cards.length} active Buy Now Pay Later agreements</span>
                      </div>
           <Button
             variant="outline"

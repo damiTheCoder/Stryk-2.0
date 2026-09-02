@@ -5,7 +5,7 @@ export default function VendorSupportPage() {
     <div className="flex flex-1 flex-col gap-6 p-4 pt-0">
       <div>
         <h1 className="text-2xl font-semibold tracking-tight">Help & Support</h1>
-        <p className="text-muted-foreground text-sm">Get help with your vendor account and lease operations.</p>
+        <p className="text-muted-foreground text-sm">Get help with your vendor account and Buy Now Pay Later operations.</p>
       </div>
       <Card>
         <CardHeader>

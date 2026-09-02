@@ -61,14 +61,14 @@ export default function VendorLeasesPage() {
         <Link href="/vendor/leases/new">
           <Button>
             <PlusIcon className="mr-2 size-4" />
-            New Lease
+            New Buy Now Pay Later Agreement
           </Button>
         </Link>
       </div>
 
       <Card>
         <CardHeader className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-          <CardTitle className="text-base">Lease Ledger</CardTitle>
+          <CardTitle className="text-base">Buy Now Pay Later Ledger</CardTitle>
           <div className="flex flex-col gap-2 sm:flex-row sm:items-center">
             <div className="relative">
               <SearchIcon className="absolute left-2.5 top-1/2 -translate-y-1/5 size-4 text-muted-foreground" />

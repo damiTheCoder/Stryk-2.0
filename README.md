@@ -2,7 +2,7 @@
 
 # Stryk 2.0
 
-A premium, open-source lease-to-own platform built with Next.js, shadcn/ui, and Tailwind CSS.
+A premium, open-source Buy Now Pay Later platform built with Next.js, shadcn/ui, and Tailwind CSS.
 
 [![CI](https://github.com/damiTheCoder/Stryk-2.0/actions/workflows/ci.yml/badge.svg)](https://github.com/damiTheCoder/Stryk-2.0/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-black.svg)](LICENSE)

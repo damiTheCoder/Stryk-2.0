@@ -90,7 +90,7 @@ export function FinancialOverview() {
       <CardHeader className="flex flex-col gap-3 space-y-0 pb-2 sm:flex-row sm:items-center sm:justify-between">
         <div className="space-y-1">
           <CardTitle className="text-base font-semibold">
-            Lease Portfolio Overview
+            Buy Now Pay Later Portfolio Overview
           </CardTitle>
           <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-xs text-muted-foreground">
             <span className="flex items-center gap-1.5">

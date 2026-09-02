@@ -64,7 +64,7 @@ export default function VendorRegisterPage() {
           <div className="flex size-8 items-center justify-center rounded-lg bg-white text-black">
             <LandmarkIcon className="size-4" />
           </div>
-          <span className="text-sm font-semibold text-white">Stryk Lease</span>
+          <span className="text-sm font-semibold text-white">Stryk Buy Now Pay Later</span>
         </Link>
 
         <div className="absolute inset-0 flex items-center justify-center overflow-hidden">
@@ -74,9 +74,9 @@ export default function VendorRegisterPage() {
         <div className="relative z-20 mt-auto p-8">
           <div className="rounded-xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm">
             <blockquote className="text-sm leading-relaxed text-white/80">
-              &ldquo;Enable lease-to-own for your customers in minutes. Get paid instantly in <span className="inline-flex items-center gap-1"><USDCIcon /></span>.&rdquo;
+              &ldquo;Enable Buy Now Pay Later for your customers in minutes. Get paid instantly in <span className="inline-flex items-center gap-1"><USDCIcon /></span>.&rdquo;
             </blockquote>
-            <p className="mt-3 text-xs text-white/50">— Stryk Lease</p>
+            <p className="mt-3 text-xs text-white/50">— Stryk Buy Now Pay Later</p>
           </div>
         </div>
       </div>
@@ -92,7 +92,7 @@ export default function VendorRegisterPage() {
           <div className="text-center">
             <h1 className="text-2xl font-semibold tracking-tight">Vendor Onboarding</h1>
             <p className="mt-1.5 text-sm text-muted-foreground">
-              Set up your business to start issuing leases
+              Set up your business to start offering Buy Now Pay Later
             </p>
           </div>
 
