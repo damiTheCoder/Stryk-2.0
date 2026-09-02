@@ -27,21 +27,21 @@ export function AccountSummary({ accounts }: AccountSummaryProps) {
     {
       label: "Total Balance",
       value: fmt(totalBalance),
-      icon: WalletIcon,
+      icon: <WalletIcon className="size-4 text-primary" />,
       color: "text-primary",
       bg: "bg-primary/10",
     },
     {
       label: "Total Change",
       value: `${isPositive ? "+" : "-"}${fmt(totalChange)}`,
-      icon: isPositive ? TrendingUpIcon : TrendingDownIcon,
+      icon: isPositive ? <TrendingUpIcon className="size-4 text-emerald-500" /> : <TrendingDownIcon className="size-4 text-rose-500" />,
       color: isPositive ? "text-emerald-500" : "text-rose-500",
       bg: isPositive ? "bg-emerald-500/10" : "bg-rose-500/10",
     },
     {
       label: "Linked Accounts",
       value: accounts.length.toString(),
-      icon: LinkIcon,
+      icon: <LinkIcon className="size-4 text-muted-foreground" />,
       color: "text-muted-foreground",
       bg: "bg-muted",
     },
@@ -60,7 +60,7 @@ export function AccountSummary({ accounts }: AccountSummaryProps) {
               card.bg
             )}
           >
-            <card.icon className={cn("size-4", card.color)} />
+            {card.icon}
           </div>
           <div className="min-w-0">
             <p className="text-xs text-muted-foreground">{card.label}</p>

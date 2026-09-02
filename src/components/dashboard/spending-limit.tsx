@@ -6,7 +6,7 @@ import {
 } from "@/components/ui/card"
 import { Progress } from "@/components/ui/progress"
 import { leaseAgreements } from "@/data/seed"
-import { LandmarkIcon } from "lucide-react"
+import Image from "next/image"
 import { USDCIcon } from "@/components/ui/usdc-icon"
 
 function formatUSDC(value: number) {
@@ -26,7 +26,7 @@ export function SpendingLimit() {
           Buy Now Pay Later Portfolio
         </CardTitle>
         <div className="flex size-8 items-center justify-center rounded-lg bg-muted">
-          <LandmarkIcon className="size-4 text-muted-foreground" />
+          <Image src="/LO.png" alt="Stryk" width={16} height={16} className="size-4 text-muted-foreground" />
         </div>
       </CardHeader>
       <CardContent className="space-y-4">

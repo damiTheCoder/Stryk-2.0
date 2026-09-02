@@ -1,7 +1,6 @@
 "use client"
 
 import { useMemo, useState } from "react"
-import Image from "next/image"
 import {
   Card,
   CardContent,
@@ -12,7 +11,7 @@ import {
 } from "@/components/ui/card"
 import { recurringCharges, type RecurringCharge } from "@/data/seed"
 import { cn } from "@/lib/utils"
-import { CheckCircle2Icon, FlagIcon, CircleDashedIcon } from "lucide-react"
+import { CheckCircle2Icon, FlagIcon, CircleDashedIcon, SmartphoneIcon, LaptopIcon, TabletIcon } from "lucide-react"
 
 type Status = RecurringCharge["status"]
 const CYCLE: Status[] = ["unset", "wanted", "review"]
@@ -30,6 +29,19 @@ function StatusIcon({ status }: { status: Status }) {
       return <FlagIcon className="size-4 text-blue-400" />
     default:
       return <CircleDashedIcon className="size-4 text-muted-foreground/50" />
+  }
+}
+
+function DeviceIcon({ category }: { category: string }) {
+  switch (category) {
+    case "Smartphone":
+      return <SmartphoneIcon className="size-5 text-muted-foreground" />
+    case "Laptop":
+      return <LaptopIcon className="size-5 text-muted-foreground" />
+    case "Tablet":
+      return <TabletIcon className="size-5 text-muted-foreground" />
+    default:
+      return <LaptopIcon className="size-5 text-muted-foreground" />
   }
 }
 
@@ -93,14 +105,7 @@ export function RecurringDetector() {
                 "flex items-center gap-3 rounded-lg px-2 py-2 transition-colors hover:bg-muted/50"
               )}
             >
-              <Image
-                src={charge.logo}
-                alt={charge.merchant}
-                width={28}
-                height={28}
-                unoptimized
-                className="size-7 rounded-md"
-              />
+              <DeviceIcon category={charge.category} />
               <div className="flex-1 min-w-0">
                 <p className="text-sm font-medium truncate">
                   {charge.merchant}

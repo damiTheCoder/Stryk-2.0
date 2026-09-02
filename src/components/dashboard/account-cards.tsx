@@ -6,7 +6,6 @@ import {
   CreditCardIcon,
   PlusIcon,
   TrendingUpIcon,
-  LandmarkIcon,
   SmartphoneIcon,
   NfcIcon,
   XIcon,
@@ -25,6 +24,7 @@ import {
 } from "@/components/ui/select"
 import { motion, AnimatePresence } from "motion/react"
 import { cn } from "@/lib/utils"
+import Image from "next/image"
 
 type AddState = "idle" | "form" | "adding" | "success"
 
@@ -32,7 +32,7 @@ const initialCards = [
   {
     ...accountCards[0],
     style: "bg-muted text-foreground",
-    icon: <LandmarkIcon className="size-5 opacity-30" />,
+    icon: <Image src="/LO.png" alt="Stryk" width={20} height={20} className="size-5 opacity-30" />,
     chipColor: "bg-border",
     last4: "4589",
   },
@@ -54,7 +54,7 @@ const initialCards = [
 
 const newCardOptions = [
   { value: "smartphone", label: "Smartphone Buy Now Pay Later", currency: "USDC", style: "bg-emerald-600 text-white", icon: <SmartphoneIcon className="size-5 opacity-30" />, chipColor: "bg-white/20" },
-  { value: "laptop", label: "Laptop Buy Now Pay Later", currency: "USDC", style: "bg-violet-600 text-white", icon: <LandmarkIcon className="size-5 opacity-30" />, chipColor: "bg-white/20" },
+  { value: "laptop", label: "Laptop Buy Now Pay Later", currency: "USDC", style: "bg-violet-600 text-white", icon: <Image src="/LO.png" alt="Stryk" width={20} height={20} className="size-5 opacity-30" />, chipColor: "bg-white/20" },
   { value: "tablet", label: "Tablet Buy Now Pay Later", currency: "USDC", style: "bg-amber-600 text-white", icon: <CreditCardIcon className="size-5 opacity-30" />, chipColor: "bg-white/20" },
 ]
 

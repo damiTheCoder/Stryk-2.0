@@ -10,10 +10,10 @@ import { recentTransactions } from "@/data/seed"
 import {
   MoreHorizontalIcon,
   ChevronRightIcon,
-  LandmarkIcon,
 } from "lucide-react"
 import { cn } from "@/lib/utils"
 import Link from "next/link"
+import Image from "next/image"
 
 const categoryColors: Record<string, string> = {
   Smartphone: "bg-blue-100 text-blue-700 dark:bg-blue-950 dark:text-blue-400",
@@ -56,7 +56,7 @@ export function RecentTransactions() {
                 {/* Merchant */}
                 <div className="flex items-center gap-3">
                   <div className="flex size-9 shrink-0 items-center justify-center rounded-lg bg-muted">
-                    <LandmarkIcon className="size-4 text-muted-foreground" />
+                    <Image src="/LO.png" alt="Stryk" width={16} height={16} className="size-4 text-muted-foreground" />
                   </div>
                   <div className="min-w-0">
                     <Link href={`/vendor/customers/${tx.consumerId}`} className="truncate text-sm font-medium text-primary hover:underline">

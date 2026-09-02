@@ -4,7 +4,6 @@ import { useState } from "react"
 import Image from "next/image"
 import Link from "next/link"
 import {
-  LandmarkIcon,
   MailIcon,
   LockIcon,
   EyeIcon,
@@ -62,7 +61,7 @@ export default function VendorRegisterPage() {
       <div className="relative hidden w-1/2 flex-col justify-between bg-zinc-950 lg:flex">
         <Link href="/" className="relative z-20 flex items-center gap-2.5 p-8">
           <div className="flex size-8 items-center justify-center rounded-lg bg-white text-black">
-            <LandmarkIcon className="size-4" />
+            <Image src="/LO.png" alt="Stryk" width={16} height={16} className="size-4" />
           </div>
           <span className="text-sm font-semibold text-white">Stryk Buy Now Pay Later</span>
         </Link>
@@ -84,8 +83,8 @@ export default function VendorRegisterPage() {
       <div className="flex flex-1 items-center justify-center bg-background px-6 py-12">
         <div className="w-full max-w-sm">
           <div className="mb-8 flex flex-col items-center lg:hidden">
-            <div className="flex size-10 items-center justify-center rounded-xl bg-primary text-primary-foreground">
-              <LandmarkIcon className="size-5" />
+            <div className="flex size-12 items-center justify-center">
+              <Image src="/LO.png" alt="Stryk" width={32} height={32} className="size-8 rounded-lg" />
             </div>
           </div>
 

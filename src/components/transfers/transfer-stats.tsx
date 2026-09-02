@@ -30,21 +30,21 @@ export function TransferStats({ transfers }: TransferStatsProps) {
     {
       label: "Total Sent",
       value: fmt(totalSent),
-      icon: ArrowUpRightIcon,
+      icon: <ArrowUpRightIcon className="size-4 text-rose-500" />,
       color: "text-rose-500",
       bg: "bg-rose-500/10",
     },
     {
       label: "Total Received",
       value: fmt(totalReceived),
-      icon: ArrowDownLeftIcon,
+      icon: <ArrowDownLeftIcon className="size-4 text-emerald-500" />,
       color: "text-emerald-500",
       bg: "bg-emerald-500/10",
     },
     {
       label: "Scheduled",
       value: `${scheduled.length} (${fmt(scheduledTotal)})`,
-      icon: ClockIcon,
+      icon: <ClockIcon className="size-4 text-amber-500" />,
       color: "text-amber-500",
       bg: "bg-amber-500/10",
     },
@@ -63,7 +63,7 @@ export function TransferStats({ transfers }: TransferStatsProps) {
               card.bg
             )}
           >
-            <card.icon className={cn("size-4", card.color)} />
+            {card.icon}
           </div>
           <div className="min-w-0">
             <p className="text-xs text-muted-foreground">{card.label}</p>

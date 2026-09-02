@@ -66,7 +66,7 @@ export default function CustomerDetailPage() {
           <USDCIcon /> {formatUSDC(totalPayable)}
         </span>
       ),
-      icon: WalletIcon,
+      icon: <WalletIcon className="size-4 text-blue-600" />,
     },
     {
       title: "Amount Paid",
@@ -75,7 +75,7 @@ export default function CustomerDetailPage() {
           <USDCIcon /> {formatUSDC(totalPaid)}
         </span>
       ),
-      icon: TrendingUpIcon,
+      icon: <TrendingUpIcon className="size-4 text-blue-600" />,
     },
     {
       title: "Amount Due",
@@ -84,12 +84,12 @@ export default function CustomerDetailPage() {
           <USDCIcon /> {formatUSDC(totalDue)}
         </span>
       ),
-      icon: WalletIcon,
+      icon: <WalletIcon className="size-4 text-blue-600" />,
     },
     {
       title: "Active Leases",
       value: activeLeases.toString(),
-      icon: LaptopIcon,
+      icon: <LaptopIcon className="size-4 text-blue-600" />,
     },
   ]
 
@@ -141,7 +141,7 @@ export default function CustomerDetailPage() {
               <CardTitle className="text-xs font-medium text-muted-foreground">
                 {metric.title}
               </CardTitle>
-              <metric.icon className="size-4 text-blue-600" />
+              {metric.icon}
             </CardHeader>
             <CardContent>
               <div className="text-xl font-bold flex items-center gap-1 md:text-2xl">{metric.value}</div>

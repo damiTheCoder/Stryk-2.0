@@ -33,10 +33,10 @@ import {
   MonitorIcon,
   StoreIcon,
   UserIcon,
-  LandmarkIcon,
 } from "lucide-react"
 import { useTheme } from "next-themes"
 import { contacts, recentTransactions, cryptoCoins } from "@/data/seed"
+import Image from "next/image"
 
 export function CommandPalette() {
   const [open, setOpen] = useState(false)
@@ -76,20 +76,20 @@ export function CommandPalette() {
 
           <CommandGroup heading="Pages">
             {[
-              { label: "Overview", icon: LayoutDashboardIcon, href: "/vendor/overview" },
-              { label: "Transactions", icon: ArrowLeftRightIcon, href: "/vendor/transactions" },
-              { label: "Investments", icon: TrendingUpIcon, href: "/vendor/investments" },
-              { label: "Analytics", icon: ChartAreaIcon, href: "/vendor/analytics" },
-              { label: "Inventory", icon: LandmarkIcon, href: "/vendor/inventory" },
-              { label: "Buy Now Pay Later Agreements", icon: UserIcon, href: "/vendor/agreements" },
-              { label: "My Agreements", icon: LandmarkIcon, href: "/consumer/leases" },
-              { label: "Settings", icon: SettingsIcon, href: "/vendor/settings" },
-              { label: "Help & Support", icon: LifeBuoyIcon, href: "/vendor/support" },
-              { label: "Sign In", icon: LogInIcon, href: "/sign-in" },
-              { label: "Sign Up", icon: UserPlusIcon, href: "/sign-up" },
+              { label: "Overview", icon: <LayoutDashboardIcon className="mr-2 size-4" />, href: "/vendor/overview" },
+              { label: "Transactions", icon: <ArrowLeftRightIcon className="mr-2 size-4" />, href: "/vendor/transactions" },
+              { label: "Investments", icon: <TrendingUpIcon className="mr-2 size-4" />, href: "/vendor/investments" },
+              { label: "Analytics", icon: <ChartAreaIcon className="mr-2 size-4" />, href: "/vendor/analytics" },
+              { label: "Inventory", icon: <Image src="/LO.png" alt="Stryk" width={16} height={16} className="mr-2 size-4" />, href: "/vendor/inventory" },
+              { label: "Buy Now Pay Later Agreements", icon: <UserIcon className="mr-2 size-4" />, href: "/vendor/agreements" },
+              { label: "My Agreements", icon: <Image src="/LO.png" alt="Stryk" width={16} height={16} className="mr-2 size-4" />, href: "/consumer/leases" },
+              { label: "Settings", icon: <SettingsIcon className="mr-2 size-4" />, href: "/vendor/settings" },
+              { label: "Help & Support", icon: <LifeBuoyIcon className="mr-2 size-4" />, href: "/vendor/support" },
+              { label: "Sign In", icon: <LogInIcon className="mr-2 size-4" />, href: "/sign-in" },
+              { label: "Sign Up", icon: <UserPlusIcon className="mr-2 size-4" />, href: "/sign-up" },
             ].map((page) => (
               <CommandItem key={page.href} onSelect={() => run(() => router.push(page.href))}>
-                <page.icon className="mr-2 size-4" />
+                {page.icon}
                 {page.label}
               </CommandItem>
             ))}

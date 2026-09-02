@@ -33,28 +33,28 @@ export function TransactionSummary({ transactions }: TransactionSummaryProps) {
     {
       label: "Total In",
       value: fmt(totalIn),
-      icon: ArrowDownLeftIcon,
+      icon: <ArrowDownLeftIcon className="size-4 text-emerald-500" />,
       color: "text-emerald-500",
       bg: "bg-emerald-500/10",
     },
     {
       label: "Total Out",
       value: fmt(totalOut),
-      icon: ArrowUpRightIcon,
+      icon: <ArrowUpRightIcon className="size-4 text-rose-500" />,
       color: "text-rose-500",
       bg: "bg-rose-500/10",
     },
     {
       label: "Largest",
       value: largest ? fmt(Math.abs(largest.amount)) : "$0.00",
-      icon: TrendingUpIcon,
+      icon: <TrendingUpIcon className="size-4 text-primary" />,
       color: "text-primary",
       bg: "bg-primary/10",
     },
     {
       label: "Count",
       value: transactions.length.toString(),
-      icon: HashIcon,
+      icon: <HashIcon className="size-4 text-muted-foreground" />,
       color: "text-muted-foreground",
       bg: "bg-muted",
     },
@@ -68,7 +68,7 @@ export function TransactionSummary({ transactions }: TransactionSummaryProps) {
           <div key={card.label} className="py-4">
             <div className="flex items-center gap-2 mb-1">
               <div className={cn("flex size-8 shrink-0 items-center justify-center rounded-full", card.bg)}>
-                <card.icon className={cn("size-4", card.color)} />
+                {card.icon}
               </div>
               <span className="text-sm text-muted-foreground">{card.label}</span>
             </div>
@@ -92,7 +92,7 @@ export function TransactionSummary({ transactions }: TransactionSummaryProps) {
                 card.bg
               )}
             >
-              <card.icon className={cn("size-4", card.color)} />
+              {card.icon}
             </div>
             <div className="min-w-0">
               <p className="text-xs text-muted-foreground">{card.label}</p>

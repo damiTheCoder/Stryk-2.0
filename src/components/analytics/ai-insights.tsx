@@ -10,7 +10,6 @@ import {
 import { aiInsights } from "@/data/seed"
 import { cn } from "@/lib/utils"
 import {
-  BrainIcon,
   SparklesIcon,
   TrendingUpIcon,
   TrendingDownIcon,
@@ -43,13 +42,17 @@ function TrendIcon({ trend }: { trend: "up" | "down" | "neutral" }) {
   }
 }
 
+function InsightIcon({ category }: { category: string }) {
+  return <SparklesIcon className="size-4 text-primary" />
+}
+
 export function AiInsights() {
   return (
     <Card>
       <CardHeader>
         <CardTitle className="flex items-center gap-2">
           <SparklesIcon className="size-4 text-primary" />
-          AI Insights
+          ChatGPT Insights
         </CardTitle>
       </CardHeader>
       <CardContent>
@@ -66,11 +69,7 @@ export function AiInsights() {
               className="flex gap-3 rounded-lg bg-muted/30 p-3"
             >
               <div className="mt-0.5 flex size-8 shrink-0 items-center justify-center rounded-lg bg-primary/10">
-                {i % 2 === 0 ? (
-                  <BrainIcon className="size-4 text-primary" />
-                ) : (
-                  <SparklesIcon className="size-4 text-primary" />
-                )}
+                <InsightIcon category={insight.category} />
               </div>
               <div className="flex-1 min-w-0 space-y-1.5">
                 <p className="text-sm leading-snug">{insight.text}</p>

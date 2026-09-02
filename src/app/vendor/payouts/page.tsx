@@ -1,12 +1,13 @@
 "use client"
 
-import { DollarSignIcon, LandmarkIcon, TrendingDownIcon, UsersIcon } from "lucide-react"
+import { DollarSignIcon, TrendingDownIcon, UsersIcon } from "lucide-react"
 import { Badge } from "@/components/ui/badge"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table"
 import { vendorMetrics } from "@/data/seed"
 import { cn } from "@/lib/utils"
 import { USDCIcon } from "@/components/ui/usdc-icon"
+import Image from "next/image"
 
 function formatUSDC(value: number) {
   return value.toLocaleString()
@@ -20,10 +21,10 @@ const payouts = [
 ]
 
 const metrics = [
-  { title: "Total Payouts", value: <span className="inline-flex items-center gap-1.5"><USDCIcon /> {formatUSDC(vendorMetrics.totalPayouts)}</span>, icon: LandmarkIcon, accent: "text-blue-600" },
-  { title: "MRR", value: <span className="inline-flex items-center gap-1.5"><USDCIcon /> {formatUSDC(vendorMetrics.mrr)}</span>, icon: DollarSignIcon, accent: "text-blue-600" },
-  { title: "Active Leases", value: vendorMetrics.totalActiveLeases.toString(), icon: UsersIcon, accent: "text-blue-600" },
-  { title: "Default Rate", value: `${vendorMetrics.defaultRate}%`, icon: TrendingDownIcon, accent: "text-blue-600" },
+  { title: "Total Payouts", value: <span className="inline-flex items-center gap-1.5"><USDCIcon /> {formatUSDC(vendorMetrics.totalPayouts)}</span>, icon: <Image src="/LO.png" alt="Stryk" width={16} height={16} className="size-4 text-blue-600" /> },
+  { title: "MRR", value: <span className="inline-flex items-center gap-1.5"><USDCIcon /> {formatUSDC(vendorMetrics.mrr)}</span>, icon: <DollarSignIcon className="size-4 text-blue-600" /> },
+  { title: "Active Leases", value: vendorMetrics.totalActiveLeases.toString(), icon: <UsersIcon className="size-4 text-blue-600" /> },
+  { title: "Default Rate", value: `${vendorMetrics.defaultRate}%`, icon: <TrendingDownIcon className="size-4 text-blue-600" /> },
 ]
 
 export default function VendorPayoutsPage() {
@@ -54,7 +55,7 @@ export default function VendorPayoutsPage() {
               <CardTitle className="text-xs font-medium text-muted-foreground">
                 {metric.title}
               </CardTitle>
-              <metric.icon className={cn("size-4", metric.accent)} />
+               {metric.icon}
             </CardHeader>
               <CardContent>
                 <div className="text-xl font-bold flex items-center gap-1">{metric.value}</div>

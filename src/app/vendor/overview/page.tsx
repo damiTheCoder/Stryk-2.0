@@ -1,11 +1,11 @@
 "use client"
 
-import { UsersIcon, DollarSignIcon, LandmarkIcon, TrendingDownIcon } from "lucide-react"
+import { UsersIcon, DollarSignIcon, TrendingDownIcon } from "lucide-react"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { DashboardCustomizer } from "@/components/dashboard/dashboard-customizer"
 import { vendorMetrics } from "@/data/seed"
-import { cn } from "@/lib/utils"
 import { USDCIcon } from "@/components/ui/usdc-icon"
+import Image from "next/image"
 
 function formatUSDC(value: number) {
   return value.toLocaleString()
@@ -16,26 +16,22 @@ export default function Page() {
     {
       title: "Active Leases",
       value: "4",
-      icon: UsersIcon,
-      accent: "text-blue-600",
+      icon: <UsersIcon className="size-4 text-blue-600" />,
     },
     {
       title: "MRR",
       value: <span className="inline-flex items-center gap-1.5"><USDCIcon /> 401</span>,
-      icon: DollarSignIcon,
-      accent: "text-blue-600",
+      icon: <DollarSignIcon className="size-4 text-blue-600" />,
     },
     {
       title: "Total Payouts",
       value: <span className="inline-flex items-center gap-1.5"><USDCIcon /> {formatUSDC(vendorMetrics.totalPayouts)}</span>,
-      icon: LandmarkIcon,
-      accent: "text-blue-600",
+      icon: <Image src="/LO.png" alt="Stryk" width={16} height={16} className="size-4 text-blue-600" />,
     },
     {
       title: "Default Rate",
       value: "16.7%",
-      icon: TrendingDownIcon,
-      accent: "text-blue-600",
+      icon: <TrendingDownIcon className="size-4 text-blue-600" />,
     },
   ]
 
@@ -61,7 +57,7 @@ export default function Page() {
                 <CardTitle className="text-xs font-medium text-muted-foreground">
                   {metric.title}
                 </CardTitle>
-                <metric.icon className={cn("size-4", metric.accent)} />
+                {metric.icon}
               </CardHeader>
               <CardContent>
                 <div className="text-xl font-bold flex items-center gap-1">{metric.value}</div>

@@ -2,7 +2,7 @@
 
 import Image from "next/image"
 import Link from "next/link"
-import { LandmarkIcon, StoreIcon, UserIcon, ArrowLeftRightIcon, TrendingUpIcon, ChartAreaIcon, PlusIcon, WalletIcon, FileTextIcon } from "lucide-react"
+import { StoreIcon, UserIcon, ArrowLeftRightIcon, TrendingUpIcon, ChartAreaIcon, PlusIcon, WalletIcon, FileTextIcon } from "lucide-react"
 import {
   Sidebar,
   SidebarContent,
