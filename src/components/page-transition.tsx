@@ -1,36 +1,30 @@
 "use client"
 
-import { useEffect, useState } from "react"
+import { useLayoutEffect, useState } from "react"
 import { usePathname, useSearchParams } from "next/navigation"
 import Image from "next/image"
 
 export function PageTransition() {
-  const [loading, setLoading] = useState(false)
-  const [fadeOut, setFadeOut] = useState(false)
+  const [mounted, setMounted] = useState(false)
   const pathname = usePathname()
   const searchParams = useSearchParams()
 
-  useEffect(() => {
-    setLoading(true)
-    setFadeOut(false)
+  useLayoutEffect(() => {
+    setMounted(true)
 
     const timer = setTimeout(() => {
-      setFadeOut(true)
-    }, 300)
+      setMounted(false)
+    }, 500)
 
     return () => clearTimeout(timer)
   }, [pathname, searchParams])
 
-  if (!loading) return null
+  if (!mounted) return null
 
   return (
     <div
-      className={`fixed inset-0 z-50 flex items-center justify-center bg-background transition-opacity duration-300 ${
-        fadeOut ? "opacity-0" : "opacity-100"
-      }`}
-      onTransitionEnd={() => {
-        if (fadeOut) setLoading(false)
-      }}
+      className="fixed inset-0 z-[100] flex items-center justify-center bg-background animate-blur-out"
+      key={pathname + searchParams.toString()}
     >
       <Image
         src="/LO.png"

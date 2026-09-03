@@ -150,6 +150,29 @@
   to { opacity: 1; }
 }
 
+@keyframes blur-in {
+  from { filter: blur(0); }
+  to { filter: blur(12px); }
+}
+
+@keyframes blur-out {
+  from { filter: blur(12px); }
+  to { filter: blur(0); }
+}
+
+@utility animate-blur-in {
+  animation: blur-in 0.2s ease-out forwards;
+}
+
+@utility animate-blur-out {
+  animation: blur-out 0.2s ease-in forwards;
+}
+
+@keyframes blur-out {
+  from { opacity: 1; filter: blur(0); }
+  to { opacity: 0; filter: blur(12px); }
+}
+
 @keyframes marquee {
   0% {
     transform: translateX(0);
@@ -161,6 +184,14 @@
 
 @utility animate-marquee {
   animation: marquee 40s linear infinite;
+}
+
+@utility animate-blur-in {
+  animation: blur-in 0.3s ease-out forwards;
+}
+
+@utility animate-blur-out {
+  animation: blur-out 0.3s ease-in forwards;
 }
 
 @media (max-width: 639px) {

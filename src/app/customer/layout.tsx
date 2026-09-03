@@ -17,7 +17,7 @@ import { Button } from "@/components/ui/button"
 import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip"
 import { useRouter, usePathname } from "next/navigation"
 
-export default function ConsumerLayout({
+export default function CustomerLayout({
   children,
 }: {
   children: React.ReactNode
@@ -35,7 +35,7 @@ export default function ConsumerLayout({
 
   return (
     <SidebarProvider>
-      <LeaseSidebar role={mode} />
+      <LeaseSidebar role="customer" />
       <SidebarInset className="overflow-x-hidden">
         <header className="sticky top-0 z-50 flex h-16 shrink-0 items-center gap-3 bg-white/95 dark:bg-slate-950/95 backdrop-blur supports-[backdrop-filter]:bg-white/60 supports-[backdrop-filter]:dark:bg-slate-950/60 md:h-14">
           <div className="flex items-center gap-3 px-4">

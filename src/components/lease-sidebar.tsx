@@ -40,25 +40,30 @@ const data = {
       ],
     },
   ],
-  navConsumerGroups: [
+  navCustomerGroups: [
     {
-      label: "Consumer Portal",
+      label: "Customer Portal",
       items: [
-        { title: "Consumer Portal", url: "/portal", icon: <WalletIcon /> },
+        { title: "Dashboard", url: "/customer/dashboard", icon: <StoreIcon /> },
+        { title: "Active Leases", url: "/customer/leases", icon: <FileTextIcon /> },
+        { title: "Transaction History", url: "/customer/transactions", icon: <ArrowLeftRightIcon /> },
+        { title: "Analytics", url: "/customer/analytics", icon: <ChartAreaIcon /> },
+        { title: "Cash To Liability Ratio", url: "/customer/liability", icon: <TrendingUpIcon /> },
       ],
     },
   ],
 }
 
-export function LeaseSidebar({ role }: { role: "vendor" | "consumer" }) {
-  const groups = role === "vendor" ? data.navVendorGroups : data.navConsumerGroups
+export function LeaseSidebar({ role }: { role: "vendor" | "consumer" | "customer" }) {
+  const normalizedRole = role === "customer" ? "customer" : role === "consumer" ? "customer" : "vendor"
+  const groups = normalizedRole === "vendor" ? data.navVendorGroups : data.navCustomerGroups
 
   return (
     <Sidebar variant="inset">
       <SidebarHeader>
         <SidebarMenu>
           <SidebarMenuItem>
-            <SidebarMenuButton size="lg" render={<Link href={role === "vendor" ? "/vendor/overview" : "/portal"} />}>
+            <SidebarMenuButton size="lg" render={<Link href={normalizedRole === "vendor" ? "/vendor/overview" : "/customer/dashboard"} />}>
               <div className="flex aspect-square size-10 items-center justify-center">
                 <Image src="/LO.png" alt="Stryk" width={32} height={32} className="size-8 object-contain rounded-lg border border-black/10 dark:border-white/10" />
               </div>
@@ -70,7 +75,7 @@ export function LeaseSidebar({ role }: { role: "vendor" | "consumer" }) {
         </SidebarMenu>
       </SidebarHeader>
       <SidebarContent>
-        <NavMain groups={role === "vendor" ? data.navVendorGroups : data.navConsumerGroups} />
+        <NavMain groups={groups} />
       </SidebarContent>
       <SidebarFooter>
         <NavUser user={data.user} />

@@ -3,6 +3,7 @@ import { Geist_Mono } from "next/font/google";
 import { ThemeProvider } from "@/components/theme-provider";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { LeaseAgreementProvider } from "@/contexts/lease-agreement-context";
+import { ModeProvider } from "@/contexts/mode-context";
 import { PageTransition } from "@/components/page-transition";
 import { Suspense } from "react";
 import "./globals.css";
@@ -51,14 +52,16 @@ export default function RootLayout({
       >
       <body className="min-h-full flex flex-col">
         <ThemeProvider attribute="class" defaultTheme="system" disableTransitionOnChange>
-          <LeaseAgreementProvider>
-            <TooltipProvider>
-              {children}
-              <Suspense fallback={null}>
-                <PageTransition />
-              </Suspense>
-            </TooltipProvider>
-          </LeaseAgreementProvider>
+          <ModeProvider>
+            <LeaseAgreementProvider>
+              <TooltipProvider>
+                {children}
+                <Suspense fallback={null}>
+                  <PageTransition />
+                </Suspense>
+              </TooltipProvider>
+            </LeaseAgreementProvider>
+          </ModeProvider>
         </ThemeProvider>
       </body>
     </html>

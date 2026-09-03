@@ -12,6 +12,7 @@ import {
 import { Button } from "@/components/ui/button"
 import { motion, AnimatePresence } from "motion/react"
 import { ThemeToggle } from "@/components/theme-toggle"
+import { useMode } from "@/contexts/mode-context"
 
 const navigation = [
   {
@@ -36,6 +37,7 @@ const navigation = [
 
 export function LandingHeader() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const { mode } = useMode()
 
   const menuItems = navigation.filter((item): item is { title: string; links: { title: string; href: string }[] } => Boolean(item.links))
 
@@ -103,9 +105,11 @@ export function LandingHeader() {
           </div>
           <div className="flex items-center gap-3">
             <ThemeToggle />
-            <Button size="default" className="bg-black text-white hover:bg-black/90 rounded-lg">
-              Launch App
-            </Button>
+            <Link href={mode === "vendor" ? "/vendor/overview" : "/customer/dashboard"}>
+              <Button size="default" className="bg-black text-white hover:bg-black/90 rounded-lg">
+                {mode === "vendor" ? "Launch App" : "My Dashboard"}
+              </Button>
+            </Link>
           </div>
         </div>
         <AnimatePresence>

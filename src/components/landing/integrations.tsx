@@ -13,7 +13,7 @@ export function LandingIntegrations() {
             Monitor BNPL activity, analytics, and lease performance from one unified dashboard.
           </p>
         </div>
-        <Image src="/h5.png" alt="Stryk" width={1200} height={675} className="mx-auto max-w-full max-w-2xl h-auto rounded-xl" />
+         <Image src="/h5.png" alt="Stryk" width={1200} height={675} className="mx-auto max-w-full max-w-lg md:max-w-xl h-auto rounded-xl" />
       </div>
     </section>
   );
