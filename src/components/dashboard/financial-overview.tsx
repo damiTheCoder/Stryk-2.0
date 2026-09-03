@@ -115,7 +115,7 @@ export function FinancialOverview() {
               <Button
                 variant="outline"
                 className={cn(
-                  "h-8 w-full justify-start text-left text-xs font-normal sm:w-[200px]",
+                  "h-8 w-full justify-start text-left text-xs font-normal !bg-muted !border-0 hover:!bg-muted/80 sm:w-[200px] sm:!bg-background sm:!border sm:hover:!bg-accent",
                   !date && "text-muted-foreground"
                 )}
               />

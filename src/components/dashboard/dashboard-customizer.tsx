@@ -20,7 +20,6 @@ import { Button } from "@/components/ui/button"
 import { GripVerticalIcon, LayoutGridIcon, LockIcon } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { FinancialOverview } from "@/components/dashboard/financial-overview"
-import { QuickTransfer } from "@/components/dashboard/quick-transfer"
 import { SpendingLimit } from "@/components/dashboard/spending-limit"
 import { MoneyMovement } from "@/components/dashboard/money-movement"
 import { RecentTransactions } from "@/components/dashboard/recent-transactions"
@@ -37,7 +36,7 @@ type Block = {
 
 const defaultBlocks: Block[] = [
   { id: "financial-overview", label: "Financial Overview", size: "lg", component: <FinancialOverview /> },
-  { id: "transfer-spending", label: "Transfer & Spending", size: "sm", component: <div className="flex flex-col gap-4 [&>*]:flex-1"><QuickTransfer /><SpendingLimit /></div> },
+  { id: "transfer-spending", label: "Transfer & Spending", size: "sm", component: <SpendingLimit /> },
   { id: "money-movement", label: "Money Movement", size: "md", component: <MoneyMovement /> },
   { id: "health-score", label: "Financial Health", size: "md", component: <HealthScore /> },
   { id: "recent-transactions", label: "Recent Transactions", size: "full", component: <RecentTransactions /> },
@@ -165,7 +164,7 @@ export function DashboardCustomizer() {
         <Button
           variant={editing ? "default" : "outline"}
           size="sm"
-          className="h-7 gap-1.5 text-xs"
+          className="h-7 gap-1.5 text-xs !bg-muted !border-0 hover:!bg-muted/80 sm:!bg-background sm:!border sm:hover:!bg-accent"
           onClick={() => setEditing(!editing)}
         >
           {editing ? (
