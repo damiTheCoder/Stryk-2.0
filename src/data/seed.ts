@@ -1188,6 +1188,9 @@ export const vendorMetrics = {
     .filter((l) => l.status === "Active")
     .reduce((sum, l) => sum + l.monthlyInstallment, 0),
   totalPayouts: leaseAgreements.reduce((sum, l) => sum + l.amountPaid, 0),
+  totalLeaseValue: leaseAgreements
+    .filter((l) => l.status === "Active")
+    .reduce((sum, l) => sum + l.totalPayable, 0),
   defaultRate: Number(
     (
       (leaseAgreements.filter((l) => l.status === "Defaulted").length /

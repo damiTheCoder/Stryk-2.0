@@ -14,7 +14,10 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip"
-import { spendingHeatmapData } from "@/data/seed"
+import { spendingHeatmapData, vendorMetrics } from "@/data/seed"
+import { USDCIcon } from "@/components/ui/usdc-icon"
+import Image from "next/image"
+import { UsersIcon, DollarSignIcon, TrendingDownIcon } from "lucide-react"
 
 const DAY_LABELS = ["", "Mon", "", "Wed", "", "Fri", ""]
 const CELL_SIZE = 13
@@ -29,6 +32,38 @@ function intensityClass(amount: number, max: number): string {
   if (ratio < 0.65) return "fill-primary/45"
   return "fill-primary/70"
 }
+
+function formatUSDC(value: number) {
+  return value.toLocaleString()
+}
+
+const vendorMetricItems = [
+  {
+    title: "Active Leases",
+    value: String(vendorMetrics.totalActiveLeases),
+    icon: <UsersIcon className="size-4 text-blue-600" />,
+  },
+  {
+    title: "MRR",
+    value: <span className="inline-flex items-center gap-1.5"><USDCIcon /> {formatUSDC(vendorMetrics.mrr)}</span>,
+    icon: <DollarSignIcon className="size-4 text-blue-600" />,
+  },
+  {
+    title: "Total Payouts",
+    value: <span className="inline-flex items-center gap-1.5"><USDCIcon /> {formatUSDC(vendorMetrics.totalPayouts)}</span>,
+    icon: <Image src="/LO.png" alt="Stryk" width={16} height={16} className="size-4 rounded text-blue-600" />,
+  },
+  {
+    title: "Total Lease Value",
+    value: <span className="inline-flex items-center gap-1.5"><USDCIcon /> {formatUSDC(vendorMetrics.totalLeaseValue)}</span>,
+    icon: <TrendingDownIcon className="size-4 text-blue-600" />,
+  },
+  {
+    title: "Default Rate",
+    value: `${vendorMetrics.defaultRate}%`,
+    icon: <TrendingDownIcon className="size-4 text-blue-600" />,
+  },
+]
 
 export function SpendingHeatmap() {
   const { grid, monthLabels, yearTotal, max } = useMemo(() => {
@@ -77,14 +112,25 @@ export function SpendingHeatmap() {
     <Card>
       <CardHeader>
         <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
-          <div>
-            <CardTitle>Buy Now Pay Later Activity</CardTitle>
-            <CardDescription>
-              <span className="tabular-nums font-medium text-foreground">
-                ${yearTotal.toLocaleString()}
-              </span>{" "}
-              total collected this year
-            </CardDescription>
+          <div className="flex flex-col gap-2">
+            <div>
+              <CardTitle>Buy Now Pay Later Activity</CardTitle>
+              <CardDescription>
+                <span className="tabular-nums font-medium text-foreground">
+                  ${yearTotal.toLocaleString()}
+                </span>{" "}
+                total collected this year
+              </CardDescription>
+            </div>
+            <div className="flex flex-wrap items-center gap-4 border-l-2 border-muted pl-4 text-sm text-muted-foreground">
+              {vendorMetricItems.map((metric) => (
+                <div key={metric.title} className="flex items-center gap-1.5">
+                  {metric.icon}
+                  <span>{metric.title}</span>
+                  <span className="font-semibold text-foreground tabular-nums">{metric.value}</span>
+                </div>
+              ))}
+            </div>
           </div>
           <div className="flex items-center gap-1.5 text-xs text-muted-foreground">
             <span>Less</span>
