@@ -21,7 +21,7 @@ const payouts = [
 ]
 
 const metrics = [
-  { title: "Total Payouts", value: <span className="inline-flex items-center gap-1.5"><USDCIcon /> {formatUSDC(vendorMetrics.totalPayouts)}</span>, icon: <Image src="/LO.png" alt="Stryk" width={16} height={16} className="size-4 text-blue-600" /> },
+  { title: "Total Payouts", value: <span className="inline-flex items-center gap-1.5"><USDCIcon /> {formatUSDC(vendorMetrics.totalPayouts)}</span>, icon: <Image src="/LO.png" alt="Stryk" width={16} height={16} className="size-4 rounded text-blue-600" /> },
   { title: "MRR", value: <span className="inline-flex items-center gap-1.5"><USDCIcon /> {formatUSDC(vendorMetrics.mrr)}</span>, icon: <DollarSignIcon className="size-4 text-blue-600" /> },
   { title: "Active Leases", value: vendorMetrics.totalActiveLeases.toString(), icon: <UsersIcon className="size-4 text-blue-600" /> },
   { title: "Default Rate", value: `${vendorMetrics.defaultRate}%`, icon: <TrendingDownIcon className="size-4 text-blue-600" /> },

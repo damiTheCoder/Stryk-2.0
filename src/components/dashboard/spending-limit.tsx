@@ -26,7 +26,7 @@ export function SpendingLimit() {
           Buy Now Pay Later Portfolio
         </CardTitle>
         <div className="flex size-8 items-center justify-center rounded-lg bg-muted">
-          <Image src="/LO.png" alt="Stryk" width={16} height={16} className="size-4 text-muted-foreground" />
+          <Image src="/LO.png" alt="Stryk" width={16} height={16} className="size-4 rounded text-muted-foreground" />
         </div>
       </CardHeader>
       <CardContent className="space-y-4">

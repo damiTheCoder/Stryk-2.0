@@ -56,7 +56,7 @@ export function RecentTransactions() {
                 {/* Merchant */}
                 <div className="flex items-center gap-3">
                   <div className="flex size-9 shrink-0 items-center justify-center rounded-lg bg-muted">
-                    <Image src="/LO.png" alt="Stryk" width={16} height={16} className="size-4 text-muted-foreground" />
+                    <Image src="/LO.png" alt="Stryk" width={16} height={16} className="size-4 rounded text-muted-foreground" />
                   </div>
                   <div className="min-w-0">
                     <Link href={`/vendor/customers/${tx.consumerId}`} className="truncate text-sm font-medium text-primary hover:underline">

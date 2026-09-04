@@ -61,7 +61,7 @@ export default function VendorRegisterPage() {
       <div className="relative hidden w-1/2 flex-col justify-between bg-zinc-950 lg:flex">
         <Link href="/" className="relative z-20 flex items-center gap-2.5 p-8">
           <div className="flex size-8 items-center justify-center rounded-lg bg-white text-black">
-            <Image src="/LO.png" alt="Stryk" width={16} height={16} className="size-4" />
+            <Image src="/LO.png" alt="Stryk" width={16} height={16} className="size-4 rounded" />
           </div>
           <span className="text-sm font-semibold text-white">Stryk Buy Now Pay Later</span>
         </Link>

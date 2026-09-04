@@ -45,7 +45,7 @@ function getScoreLabel(score: number) {
 // ── Factor icons ─────────────────────────────────────────────────────────────
 
 const factorIcons: Record<string, React.ReactNode> = {
-  hf1: <Image src="/LO.png" alt="Stryk" width={16} height={16} className="size-4" />,
+  hf1: <Image src="/LO.png" alt="Stryk" width={16} height={16} className="size-4 rounded" />,
   hf2: <ShieldIcon className="size-4" />,
   hf3: <TrendingUpIcon className="size-4" />,
   hf4: <LineChartIcon className="size-4" />,

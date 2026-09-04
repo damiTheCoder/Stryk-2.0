@@ -22,7 +22,6 @@ import { cn } from "@/lib/utils"
 import { FinancialOverview } from "@/components/dashboard/financial-overview"
 import { SpendingLimit } from "@/components/dashboard/spending-limit"
 import { MoneyMovement } from "@/components/dashboard/money-movement"
-import { RecentTransactions } from "@/components/dashboard/recent-transactions"
 import { HealthScore } from "@/components/dashboard/health-score"
 
 type WidgetSize = "sm" | "md" | "lg" | "full"
@@ -39,7 +38,6 @@ const defaultBlocks: Block[] = [
   { id: "transfer-spending", label: "Transfer & Spending", size: "sm", component: <SpendingLimit /> },
   { id: "money-movement", label: "Money Movement", size: "md", component: <MoneyMovement /> },
   { id: "health-score", label: "Financial Health", size: "md", component: <HealthScore /> },
-  { id: "recent-transactions", label: "Recent Transactions", size: "full", component: <RecentTransactions /> },
 ]
 
 const sizeClass: Record<WidgetSize, string> = {
