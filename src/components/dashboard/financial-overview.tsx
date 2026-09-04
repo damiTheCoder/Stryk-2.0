@@ -86,7 +86,7 @@ export function FinancialOverview() {
   }, [filteredData])
 
   return (
-    <Card>
+    <Card className="bg-background">
       <CardHeader className="flex flex-col gap-3 space-y-0 pb-2 sm:flex-row sm:items-center sm:justify-between">
         <div className="space-y-1">
           <CardTitle className="text-base font-semibold">
@@ -115,7 +115,7 @@ export function FinancialOverview() {
               <Button
                 variant="outline"
                 className={cn(
-                  "h-8 w-full justify-start text-left text-xs font-normal !bg-muted !border-0 hover:!bg-muted/80 sm:w-[200px] sm:!bg-background sm:!border sm:hover:!bg-accent",
+                  "h-8 w-full justify-start text-left text-xs font-normal border-0 hover:bg-accent sm:w-[200px] sm:border",
                   !date && "text-muted-foreground"
                 )}
               />

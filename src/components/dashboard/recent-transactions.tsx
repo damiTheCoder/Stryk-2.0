@@ -25,7 +25,7 @@ const categoryColors: Record<string, string> = {
 
 export function RecentTransactions() {
   return (
-    <Card>
+    <Card className="bg-background">
       <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-4">
         <CardTitle className="text-base font-semibold">
           Buy Now Pay Later Payments

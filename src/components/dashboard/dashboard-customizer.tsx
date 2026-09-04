@@ -164,7 +164,7 @@ export function DashboardCustomizer() {
         <Button
           variant={editing ? "default" : "outline"}
           size="sm"
-          className="h-7 gap-1.5 text-xs !bg-muted !border-0 hover:!bg-muted/80 sm:!bg-background sm:!border sm:hover:!bg-accent"
+          className="h-7 gap-1.5 text-xs border-0 hover:bg-accent sm:border"
           onClick={() => setEditing(!editing)}
         >
           {editing ? (

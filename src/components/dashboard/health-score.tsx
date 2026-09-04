@@ -259,7 +259,7 @@ export function HealthScore() {
   const [selectedFactor, setSelectedFactor] = useState<HealthFactor | null>(null)
 
   return (
-    <Card>
+    <Card className="bg-background">
       <CardHeader className="pb-2">
         <CardTitle className="flex items-center gap-2 text-base font-semibold">
           <HeartPulseIcon className="size-4 text-primary" />
