@@ -1,15 +1,9 @@
 "use client"
 
-import Image from "next/image"
+import { DollarSign } from "lucide-react"
 
 export function USDCIcon({ className }: { className?: string }) {
   return (
-    <Image
-      src="/usdc.png"
-      alt="USDC"
-      width={20}
-      height={20}
-      className={`size-5 rounded-full object-contain align-middle ${className || ""}`}
-    />
+    <DollarSign className={`size-4 text-green-600 ${className || ""}`} />
   )
 }

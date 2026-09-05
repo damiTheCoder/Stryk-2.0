@@ -16,9 +16,6 @@ import {
 } from "@/components/ui/tooltip"
 import { leaseAgreements } from "@/data/seed"
 import { LeaseAgreement } from "@/types/lease"
-import { USDCIcon } from "@/components/ui/usdc-icon"
-import Image from "next/image"
-import { UsersIcon, DollarSignIcon, TrendingDownIcon } from "lucide-react"
 
 const CELL_SIZE = 13
 const CELL_GAP = 3
@@ -33,12 +30,8 @@ function intensityClass(amount: number, max: number): string {
   return "fill-primary/70"
 }
 
-function formatUSDC(value: number) {
-  return value.toLocaleString()
-}
-
 export function CustomerSpendingHeatmap() {
-  const { grid, monthLabels, yearTotal, max, activeLeases, totalPaid, totalMonthly, totalLeaseValue } = useMemo(() => {
+  const { grid, monthLabels, yearTotal, max } = useMemo(() => {
     const data: { date: string; amount: number }[] = []
     const start = new Date(2025, 3, 14)
     const activeLeases = leaseAgreements.filter((l) => l.status !== "Defaulted")
@@ -65,9 +58,6 @@ export function CustomerSpendingHeatmap() {
 
     const max = Math.max(...data.map((d) => d.amount))
     const yearTotal = data.reduce((s, d) => s + d.amount, 0)
-    const totalPaid = activeLeases.reduce((sum, l) => sum + l.amountPaid, 0)
-    const totalMonthly = activeLeases.reduce((sum, l) => sum + l.monthlyInstallment, 0)
-    const totalLeaseValue = activeLeases.reduce((sum, l) => sum + l.totalPayable, 0)
 
     const firstDate = new Date(data[0].date)
     const startDay = firstDate.getDay()
@@ -99,60 +89,21 @@ export function CustomerSpendingHeatmap() {
       }
     }
 
-    return { grid: weeks, monthLabels: months, yearTotal, max, activeLeases, totalPaid, totalMonthly, totalLeaseValue }
+    return { grid: weeks, monthLabels: months, yearTotal, max }
   }, [])
-
-  const customerMetricItems = [
-    {
-      title: "Active Leases",
-      value: String(activeLeases.length),
-      icon: <UsersIcon className="size-4 text-blue-600" />,
-    },
-    {
-      title: "Total Paid",
-      value: <span className="inline-flex items-center gap-1.5"><USDCIcon /> {formatUSDC(totalPaid)}</span>,
-      icon: <DollarSignIcon className="size-4 text-blue-600" />,
-    },
-    {
-      title: "Monthly Payments",
-      value: <span className="inline-flex items-center gap-1.5"><USDCIcon /> {formatUSDC(totalMonthly)}</span>,
-      icon: <Image src="/LO.png" alt="Stryk" width={16} height={16} className="size-4 rounded text-blue-600" />,
-    },
-    {
-      title: "Total Lease Value",
-      value: <span className="inline-flex items-center gap-1.5"><USDCIcon /> {formatUSDC(totalLeaseValue)}</span>,
-      icon: <TrendingDownIcon className="size-4 text-blue-600" />,
-    },
-    {
-      title: "Default Rate",
-      value: "0%",
-      icon: <TrendingDownIcon className="size-4 text-blue-600" />,
-    },
-  ]
 
   return (
     <Card>
       <CardHeader>
         <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
-          <div className="flex flex-col gap-2">
-            <div>
-              <CardTitle>Payment Activity</CardTitle>
-              <CardDescription>
-                <span className="tabular-nums font-medium text-foreground">
-                  ${yearTotal.toLocaleString()}
-                </span>{" "}
-                total paid this year
-              </CardDescription>
-            </div>
-            <div className="flex flex-wrap items-center gap-4 border-l-2 border-muted pl-4 text-sm text-muted-foreground">
-              {customerMetricItems.map((metric) => (
-                <div key={metric.title} className="flex items-center gap-1.5">
-                  {metric.icon}
-                  <span>{metric.title}</span>
-                  <span className="font-semibold text-foreground tabular-nums">{metric.value}</span>
-                </div>
-              ))}
-            </div>
+          <div>
+            <CardTitle>Payment Activity</CardTitle>
+            <CardDescription>
+              <span className="tabular-nums font-medium text-foreground">
+                ${yearTotal.toLocaleString()}
+              </span>{" "}
+              total paid this year
+            </CardDescription>
           </div>
           <div className="flex items-center gap-1.5 text-xs text-muted-foreground">
             <span>Less</span>
