@@ -21,35 +21,18 @@ import {
   ChartTooltipContent,
   type ChartConfig,
 } from "@/components/ui/chart"
-import { Area, AreaChart, CartesianGrid, XAxis, YAxis, type DotProps } from "recharts"
+import { Area, AreaChart, CartesianGrid, XAxis, YAxis } from "recharts"
 import { leaseOverview } from "@/data/seed"
 import { CalendarIcon } from "lucide-react"
 import { cn } from "@/lib/utils"
 import type { DateRange } from "react-day-picker"
 
-function SquareDot({ cx, cy, fill, opacity = 1, size = 6 }: DotProps & { size?: number; opacity?: number }) {
-  if (cx == null || cy == null) return null
-  return (
-    <rect
-      x={cx - size / 2}
-      y={cy - size / 2}
-      width={size}
-      height={size}
-      fill={fill}
-      fillOpacity={opacity}
-      rx={1}
-    />
-  )
-}
+
 
 const chartConfig = {
   currentYear: {
     label: "This Year",
     color: "var(--color-primary)",
-  },
-  lastYear: {
-    label: "Last Year",
-    color: "var(--color-muted-foreground)",
   },
 } satisfies ChartConfig
 
@@ -81,8 +64,7 @@ export function FinancialOverview() {
 
   const totals = useMemo(() => {
     const current = filteredData.reduce((s, d) => s + d.currentYear, 0)
-    const last = filteredData.reduce((s, d) => s + d.lastYear, 0)
-    return { current, last }
+    return current
   }, [filteredData])
 
   return (
@@ -90,21 +72,14 @@ export function FinancialOverview() {
       <CardHeader className="flex flex-col gap-3 space-y-0 pb-2 sm:flex-row sm:items-center sm:justify-between">
         <div className="space-y-1">
           <CardTitle className="text-base font-semibold">
-            Buy Now Pay Later Portfolio Overview
+            Installment Plan Portfolio Overview
           </CardTitle>
           <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-xs text-muted-foreground">
             <span className="flex items-center gap-1.5">
               <span className="size-2 rounded-full bg-primary" />
               This Year{" "}
               <span className="font-medium text-foreground">
-                ${totals.current.toLocaleString()}
-              </span>
-            </span>
-            <span className="flex items-center gap-1.5">
-              <span className="size-2 rounded-full bg-muted-foreground/40" />
-              Last Year{" "}
-              <span className="font-medium text-foreground">
-                ${totals.last.toLocaleString()}
+                ${totals.toLocaleString()}
               </span>
             </span>
           </div>
@@ -198,22 +173,11 @@ export function FinancialOverview() {
               }
             />
             <Area
-              dataKey="lastYear"
-              type="linear"
-              stroke="var(--color-muted-foreground)"
-              strokeOpacity={0.3}
-              strokeWidth={1.5}
-              fill="transparent"
-              dot={<SquareDot fill="var(--color-muted-foreground)" opacity={0.3} size={5} />}
-            />
-            <Area
               dataKey="currentYear"
               type="linear"
               stroke="var(--color-primary)"
               strokeWidth={2}
               fill="url(#fillCurrent)"
-              dot={<SquareDot fill="var(--color-primary)" size={6} />}
-              activeDot={<SquareDot fill="var(--color-primary)" size={9} />}
             />
           </AreaChart>
         </ChartContainer>

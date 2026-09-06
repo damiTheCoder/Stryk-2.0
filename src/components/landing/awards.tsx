@@ -5,12 +5,12 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
 const awards = [
-  { name: "Best BNPL Support - Spring 2025", color: "bg-emerald-500" },
-  { name: "Top BNPL Performer - Spring 2025", color: "bg-blue-500" },
+  { name: "Best Installment Plan Support - Spring 2025", color: "bg-emerald-500" },
+  { name: "Top Installment Plan Performer - Spring 2025", color: "bg-blue-500" },
   { name: "Momentum Leader - Spring 2025", color: "bg-purple-500" },
-  { name: "Easiest BNPL Setup - Spring 2025", color: "bg-orange-500" },
+  { name: "Easiest Installment Plan Setup - Spring 2025", color: "bg-orange-500" },
   { name: "Fastest Lease Approval - Spring 2025", color: "bg-cyan-500" },
-  { name: "Most Trusted BNPL Platform - Spring 2025", color: "bg-pink-500" },
+  { name: "Most Trusted Installment Plan Platform - Spring 2025", color: "bg-pink-500" },
 ]
 
 export function LandingAwards() {
@@ -24,7 +24,7 @@ export function LandingAwards() {
           className="mb-12"
         >
           <h2 className="text-3xl font-normal tracking-tight md:text-4xl">
-            The BNPL platform built for the physical economy
+            The installment plan platform built for the physical economy
           </h2>
           <p className="mt-4 max-w-2xl text-lg text-muted-foreground">
             Lease approval, payment collection, and portfolio management — all in one place.

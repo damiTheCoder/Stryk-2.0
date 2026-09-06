@@ -7,7 +7,7 @@ const testimonials = [
   {
     name: "Alex Chen",
     role: "Founder, TechRetail",
-    content: "Stryk lets us offer Buy Now Pay Later at checkout without any integration. Our customers get flexible payments, and we get paid instantly.",
+    content: "Stryk lets us offer installment plans at checkout without any integration. Our customers get flexible payments, and we get paid instantly.",
     avatar: "AC",
   },
   {
@@ -19,7 +19,7 @@ const testimonials = [
   {
     name: "Marcus Williams",
     role: "Head of E-commerce, GadgetWorld",
-    content: "Our customers love the flexibility and we love getting paid faster. Stryk made Buy Now Pay Later simple for our team.",
+    content: "Our customers love the flexibility and we love getting paid faster. Stryk made installment plans simple for our team.",
     avatar: "MW",
   },
 ]

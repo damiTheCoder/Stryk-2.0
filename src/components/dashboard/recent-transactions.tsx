@@ -28,7 +28,7 @@ export function RecentTransactions() {
     <Card className="bg-background">
       <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-4">
         <CardTitle className="text-base font-semibold">
-          Buy Now Pay Later Payments
+          Installment Plan Payments
         </CardTitle>
         <Button variant="outline" size="sm" className="h-8 gap-1 text-xs">
           See All

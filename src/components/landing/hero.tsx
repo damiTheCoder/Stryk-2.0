@@ -24,7 +24,7 @@ export function LandingHero() {
             className="flex flex-col gap-6"
           >
             <h1 className="text-4xl font-medium tracking-tighter md:text-5xl lg:text-6xl text-pretty">
-              The Buy Now, Pay Later Platform for the Physical Economy
+              The Installment Plan Platform for the Physical Economy
             </h1>
           </motion.div>
           <motion.div
@@ -34,7 +34,7 @@ export function LandingHero() {
             className="flex flex-col justify-center gap-6"
           >
             <p className="text-xl text-muted-foreground text-balance">
-              Stryk is a complete BNPL platform where sellers onboard customers, set terms, and manage payments. Offer flexible payments at checkout and get paid instantly.
+              Stryk is a complete installment plan platform where sellers onboard customers, set terms, and manage payments. Offer flexible payment plans at checkout and get paid instantly.
             </p>
             <div className="flex flex-wrap gap-4">
               <Link href="/sign-in">

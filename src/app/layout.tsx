@@ -16,25 +16,25 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL("https://stryk2-0.vercel.app"),
   title: {
-    default: "Stryk 2.0 — Buy Now Pay Later Portfolio Management",
+    default: "Stryk 2.0 — Installment Plan Management",
     template: "%s | Stryk 2.0",
   },
-  description: "A premium Buy Now Pay Later platform built with Next.js, shadcn/ui, and Tailwind CSS.",
+  description: "A premium installment plan platform built with Next.js, shadcn/ui, and Tailwind CSS.",
   icons: [
     { rel: "icon", url: "/LO.png", type: "image/png" },
     { rel: "apple", url: "/LO.png", type: "image/png" },
   ],
   openGraph: {
-    title: "Stryk 2.0 — Buy Now Pay Later Portfolio Management",
-    description: "A premium Buy Now Pay Later platform built with Next.js, shadcn/ui, and Tailwind CSS.",
+    title: "Stryk 2.0 — Installment Plan Management",
+    description: "A premium installment plan platform built with Next.js, shadcn/ui, and Tailwind CSS.",
     type: "website",
     url: "https://stryk2-0.vercel.app",
     images: [{ url: "/LO.png", width: 1200, height: 630 }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Stryk 2.0 — Buy Now Pay Later Portfolio Management",
-    description: "A premium Buy Now Pay Later platform built with Next.js, shadcn/ui, and Tailwind CSS.",
+    title: "Stryk 2.0 — Installment Plan Management",
+    description: "A premium installment plan platform built with Next.js, shadcn/ui, and Tailwind CSS.",
     images: ["/LO.png"],
   },
 };

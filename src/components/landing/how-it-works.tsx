@@ -40,7 +40,7 @@ export function LandingHowItWorks() {
             From Checkout to Closed
           </h2>
           <p className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground">
-            One platform. One flow. A complete Buy Now Pay Later lifecycle for physical goods.
+            One platform. One flow. A complete installment plan lifecycle for physical goods.
           </p>
         </motion.div>
 

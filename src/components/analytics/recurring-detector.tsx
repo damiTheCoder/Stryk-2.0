@@ -85,7 +85,7 @@ export function RecurringDetector() {
       <CardHeader>
         <div className="flex items-center justify-between">
           <div>
-            <CardTitle>Recurring Buy Now Pay Later Payments</CardTitle>
+            <CardTitle>Recurring Installment Plan Payments</CardTitle>
             <CardDescription>
               <span className="tabular-nums font-medium text-foreground">
                 ${monthlyTotal.toFixed(2)}

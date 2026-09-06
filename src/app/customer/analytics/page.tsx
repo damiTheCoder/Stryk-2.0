@@ -2,7 +2,7 @@ import { CustomerAnalyticsPageClient } from "@/components/analytics/customer-ana
 
 export default function Page() {
   return (
-    <div className="flex flex-1 flex-col gap-4 p-4 pt-0">
+    <div className="flex flex-1 flex-col gap-4 p-4 pt-0 md:mx-8">
       <CustomerAnalyticsPageClient />
     </div>
   )

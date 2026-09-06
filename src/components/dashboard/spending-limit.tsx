@@ -23,7 +23,7 @@ export function SpendingLimit() {
     <Card className="bg-background">
       <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
         <CardTitle className="text-base font-semibold">
-          Buy Now Pay Later Portfolio
+          Installment Plan Portfolio
         </CardTitle>
         <div className="flex size-8 items-center justify-center rounded-lg bg-muted">
           <Image src="/LO.png" alt="Stryk" width={16} height={16} className="size-4 rounded text-muted-foreground" />
@@ -31,7 +31,7 @@ export function SpendingLimit() {
       </CardHeader>
       <CardContent className="space-y-4">
         <div>
-          <p className="text-xs text-muted-foreground">Total Buy Now Pay Later Value</p>
+          <p className="text-xs text-muted-foreground">Total Installment Plan Value</p>
           <p className="text-2xl font-bold tabular-nums tracking-tight flex items-center gap-1">
             <USDCIcon /> {formatUSDC(totalValue)}
           </p>

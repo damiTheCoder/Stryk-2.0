@@ -31,7 +31,7 @@ const features = [
   {
     number: "04",
     title: "From Checkout to Closed",
-    subtitle: "A complete BNPL lifecycle.",
+    subtitle: "A complete installment plan lifecycle.",
     description: "Seller creates the plan → customer pays over time → Stryk handles servicing and collections → plan closes automatically.",
     href: "#how-it-works",
   },
@@ -49,7 +49,7 @@ export function LandingPlatform() {
         >
           <span className="text-sm font-medium text-muted-foreground">01 PLATFORM</span>
           <h2 className="mt-4 text-3xl font-normal tracking-tight md:text-4xl">
-            The Buy Now, Pay Later Platform for the Physical Economy
+            The Installment Plan Platform for the Physical Economy
           </h2>
           <p className="mt-4 max-w-2xl text-lg text-muted-foreground">
             Stryk lets sellers offer flexible payments at checkout, manage payment plans, and get paid faster — all in one place.

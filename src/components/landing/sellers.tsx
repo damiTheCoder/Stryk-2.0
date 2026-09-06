@@ -37,7 +37,7 @@ export function LandingSellers() {
             Sell More. Get Paid Faster.
           </h2>
           <p className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground">
-            The complete BNPL platform built for any seller.
+            The complete installment plan platform built for any seller.
           </p>
         </motion.div>
 

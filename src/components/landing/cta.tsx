@@ -26,7 +26,7 @@ export function LandingCta() {
           className="text-center"
         >
           <h2 className="text-3xl font-normal tracking-tight md:text-4xl">
-            Ready to offer Buy Now Pay Later at checkout?
+            Ready to offer installment plans at checkout?
           </h2>
           <div className="mt-8 flex flex-wrap justify-center gap-4">
             <Link href="/sign-in">

@@ -120,7 +120,7 @@ export default function CustomerLeasesPage() {
       {allLeases.length === 0 ? (
         <Card>
           <CardContent className="py-12 text-center">
-            <p className="text-muted-foreground">No active Buy Now Pay Later agreements found.</p>
+            <p className="text-muted-foreground">No active installment plans found.</p>
             <p className="text-sm text-muted-foreground mt-2">Paste a vendor agreement link above to get started.</p>
           </CardContent>
         </Card>

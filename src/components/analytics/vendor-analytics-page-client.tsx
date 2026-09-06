@@ -8,7 +8,7 @@ import { AiInsights } from "@/components/analytics/ai-insights"
 
 export function VendorAnalyticsPageClient() {
   return (
-    <div className="flex flex-col gap-4">
+    <div className="flex flex-col gap-4 md:mx-8">
       <SpendingHeatmap />
 
       <div className="grid gap-4 lg:grid-cols-2">
