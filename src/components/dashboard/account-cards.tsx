@@ -32,7 +32,7 @@ const initialCards = [
   {
     ...accountCards[0],
     style: "bg-muted text-foreground",
-    icon: <Image src="/LO.png" alt="Stryk" width={20} height={20} className="size-5 rounded opacity-30" />,
+    icon: <Image src="/LO.png" alt="Stryk" width={20} height={20} className="size-5 rounded-full opacity-30" />,
     chipColor: "bg-border",
     last4: "4589",
   },
@@ -54,7 +54,7 @@ const initialCards = [
 
 const newCardOptions = [
   { value: "smartphone", label: "Smartphone Installment Plan", currency: "USDC", style: "bg-emerald-600 text-white", icon: <SmartphoneIcon className="size-5 opacity-30" />, chipColor: "bg-white/20" },
-  { value: "laptop", label: "Laptop Installment Plan", currency: "USDC", style: "bg-violet-600 text-white", icon: <Image src="/LO.png" alt="Stryk" width={20} height={20} className="size-5 rounded opacity-30" />, chipColor: "bg-white/20" },
+  { value: "laptop", label: "Laptop Installment Plan", currency: "USDC", style: "bg-violet-600 text-white", icon: <Image src="/LO.png" alt="Stryk" width={20} height={20} className="size-5 rounded-full opacity-30" />, chipColor: "bg-white/20" },
   { value: "tablet", label: "Tablet Installment Plan", currency: "USDC", style: "bg-amber-600 text-white", icon: <CreditCardIcon className="size-5 opacity-30" />, chipColor: "bg-white/20" },
 ]
 

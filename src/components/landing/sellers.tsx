@@ -32,7 +32,7 @@ export function LandingSellers() {
           viewport={{ once: true }}
           className="mb-16 text-center"
         >
-          <span className="text-sm font-medium text-muted-foreground">FOR SELLERS</span>
+          <span className="text-sm font-semibold tracking-wider text-primary uppercase">FOR SELLERS</span>
           <h2 className="mt-4 text-3xl font-normal tracking-tight md:text-4xl">
             Sell More. Get Paid Faster.
           </h2>
@@ -65,7 +65,7 @@ export function LandingSellers() {
           className="mt-12 text-center"
         >
           <Link href="/get-started">
-            <Button size="lg" className="bg-black text-white hover:bg-black/90 rounded-lg">
+            <Button size="lg" className="bg-primary text-black hover:bg-primary/90 rounded-lg font-semibold shadow-md shadow-primary/25">
               Start Your Free Trial →
             </Button>
           </Link>

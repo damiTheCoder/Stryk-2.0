@@ -31,7 +31,7 @@ export function LandingAwards() {
           </p>
           <div className="mt-6">
             <Link href="/sign-in">
-              <Button size="lg" className="bg-black text-white hover:bg-black/90 rounded-lg">
+              <Button size="lg" className="bg-primary text-black hover:bg-primary/90 rounded-lg font-semibold shadow-md shadow-primary/25">
                 Get Started
               </Button>
             </Link>

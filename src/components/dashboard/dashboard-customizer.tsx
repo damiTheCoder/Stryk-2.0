@@ -21,8 +21,6 @@ import { GripVerticalIcon, LayoutGridIcon, LockIcon } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { FinancialOverview } from "@/components/dashboard/financial-overview"
 import { SpendingLimit } from "@/components/dashboard/spending-limit"
-import { MoneyMovement } from "@/components/dashboard/money-movement"
-import { HealthScore } from "@/components/dashboard/health-score"
 
 type WidgetSize = "sm" | "md" | "lg" | "full"
 
@@ -36,8 +34,6 @@ type Block = {
 const defaultBlocks: Block[] = [
   { id: "financial-overview", label: "Financial Overview", size: "lg", component: <FinancialOverview /> },
   { id: "transfer-spending", label: "Transfer & Spending", size: "sm", component: <SpendingLimit /> },
-  { id: "money-movement", label: "Money Movement", size: "md", component: <MoneyMovement /> },
-  { id: "health-score", label: "Financial Health", size: "md", component: <HealthScore /> },
 ]
 
 const sizeClass: Record<WidgetSize, string> = {

@@ -4,6 +4,8 @@ import { Separator } from "@/components/ui/separator";
 import Link from "next/link";
 import { motion } from "motion/react";
 
+import Image from "next/image";
+
 const Footer = () => {
   const year = new Date().getFullYear();
 
@@ -29,9 +31,10 @@ const Footer = () => {
           <div className="lg:col-span-1">
             <Link
               href="/"
-              className="inline-block text-xl font-medium tracking-tight transition-opacity hover:opacity-80"
+              className="inline-flex items-center gap-2 text-xl font-medium tracking-tight transition-opacity hover:opacity-80"
             >
-              STRYK
+              <Image src="/brand-logo.png" alt="Stryk" width={28} height={28} className="size-7 rounded-full border border-black dark:border-black object-contain" />
+              <span>STRYK</span>
             </Link>
             <p className="mt-4 max-w-xs text-sm leading-relaxed text-muted-foreground">
               hello@stryk.finance

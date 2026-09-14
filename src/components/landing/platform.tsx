@@ -13,6 +13,7 @@ const features = [
     subtitle: "Onboard customers. Set your terms.",
     description: "Create payment plans in minutes. No developers, no payment provider integrations. You own the customer relationship and data.",
     href: "#sellers",
+    image: "/h1.jpeg",
   },
   {
     number: "02",
@@ -20,6 +21,7 @@ const features = [
     subtitle: "Stop waiting for payments.",
     description: "Stryk can buy your payment plans at a discount, giving you instant liquidity.",
     href: "#how-it-works",
+    image: "/h2.jpeg",
   },
   {
     number: "03",
@@ -27,6 +29,7 @@ const features = [
     subtitle: "Real devices. Real payments.",
     description: "Stryk is purpose-built for tangible assets — smartphones, laptops, tablets, and more — with terms and payments tailored to each purchase.",
     href: "#sellers",
+    image: "/h3.jpeg",
   },
   {
     number: "04",
@@ -34,6 +37,7 @@ const features = [
     subtitle: "A complete installment plan lifecycle.",
     description: "Seller creates the plan → customer pays over time → Stryk handles servicing and collections → plan closes automatically.",
     href: "#how-it-works",
+    image: "/h4.jpeg",
   },
 ]
 
@@ -49,14 +53,18 @@ export function LandingPlatform() {
         >
           <span className="text-sm font-medium text-muted-foreground">01 PLATFORM</span>
           <h2 className="mt-4 text-3xl font-normal tracking-tight md:text-4xl">
-            The Installment Plan Platform for the Physical Economy
+            The{" "}
+            <span className="inline-block bg-primary text-black border border-black rounded-lg md:rounded-xl px-2.5 py-0.5 font-normal my-0.5">
+              Installment
+            </span>{" "}
+            Plan Platform for the Physical Economy
           </h2>
           <p className="mt-4 max-w-2xl text-lg text-muted-foreground">
             Stryk lets sellers offer flexible payments at checkout, manage payment plans, and get paid faster — all in one place.
           </p>
         </motion.div>
 
-        <div className="grid gap-0 sm:grid-cols-2 lg:grid-cols-2">
+        <div className="grid gap-6 md:gap-8 sm:grid-cols-2 lg:grid-cols-2">
           {features.map((feature, index) => (
             <motion.div
               key={feature.number}
@@ -64,30 +72,40 @@ export function LandingPlatform() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
-              className="group relative flex flex-col rounded-none border border-black bg-muted/40 px-6 pt-6 transition-all hover:shadow-none dark:border-neutral-600"
+              className="group relative flex flex-col justify-between rounded-2xl border border-black bg-card/60 p-6 md:p-8 overflow-hidden transition-all hover:shadow-md dark:border-neutral-700 dark:bg-card/40"
             >
-              <div className="mb-3 flex items-start justify-between">
-                <h3 className="text-base font-normal leading-snug">{feature.title}</h3>
-                <Link href={feature.href} className="mt-1 shrink-0 rounded-md border p-1.5">
-                  <ArrowUpRightIcon className="size-4" />
-                </Link>
+              <div className="flex flex-col gap-5">
+                <div className="-mt-6 -mx-6 md:-mt-8 md:-mx-8 overflow-hidden border-b border-black/10 dark:border-white/10 bg-background/50">
+                  <Image
+                    src={feature.image}
+                    alt={feature.title}
+                    width={400}
+                    height={220}
+                    unoptimized
+                    className="w-full h-auto object-cover transition-transform duration-300 group-hover:scale-[1.02]"
+                  />
+                </div>
+
+                <div className="flex items-start justify-between gap-3 pt-1">
+                  <h3 className="text-lg font-semibold tracking-tight leading-snug">{feature.title}</h3>
+                  <Link href={feature.href} className="shrink-0 rounded-lg border border-black/10 p-2 hover:bg-muted transition-colors dark:border-white/10">
+                    <ArrowUpRightIcon className="size-4" />
+                  </Link>
+                </div>
+
+                <div className="space-y-2">
+                  <p className="text-sm font-medium text-foreground/80">{feature.subtitle}</p>
+                  <p className="text-sm leading-relaxed text-muted-foreground">{feature.description}</p>
+                </div>
               </div>
-              <p className="mb-2 text-sm text-muted-foreground">{feature.subtitle}</p>
-              <p className="mb-6 text-sm text-muted-foreground">{feature.description}</p>
-              <div>
+
+              <div className="pt-6 mt-auto">
                 <Link href="/sign-in">
-                  <Button variant="ghost" size="sm" className="gap-1 p-0 h-auto text-sm">
-                    Get Started <ArrowRightIcon className="size-3.5" />
+                  <Button className="gap-1.5 bg-primary text-black hover:bg-primary/90 rounded-xl font-semibold px-4 py-2 text-sm shadow-xs transition-colors">
+                    Get Started <ArrowRightIcon className="size-4" />
                   </Button>
                 </Link>
               </div>
-              <Image
-                src={`/h${parseInt(feature.number, 10)}.png`}
-                alt=""
-                width={400}
-                height={200}
-                className="w-full h-auto"
-              />
             </motion.div>
           ))}
         </div>

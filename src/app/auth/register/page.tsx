@@ -60,8 +60,8 @@ export default function VendorRegisterPage() {
     <div className="flex min-h-svh">
       <div className="relative hidden w-1/2 flex-col justify-between bg-zinc-950 lg:flex">
         <Link href="/" className="relative z-20 flex items-center gap-2.5 p-8">
-          <div className="flex size-8 items-center justify-center rounded-lg bg-white text-black">
-            <Image src="/LO.png" alt="Stryk" width={16} height={16} className="size-4 rounded" />
+          <div className="flex size-8 items-center justify-center rounded-full bg-white text-black">
+            <Image src="/brand-logo.png" alt="Stryk" width={16} height={16} className="size-4 rounded-full border border-black" />
           </div>
           <span className="text-sm font-semibold text-white">Stryk Installment Plans</span>
         </Link>
@@ -84,7 +84,7 @@ export default function VendorRegisterPage() {
         <div className="w-full max-w-sm">
           <div className="mb-8 flex flex-col items-center lg:hidden">
             <div className="flex size-12 items-center justify-center">
-              <Image src="/LO.png" alt="Stryk" width={32} height={32} className="size-8 rounded-lg" />
+              <Image src="/brand-logo.png" alt="Stryk" width={32} height={32} className="size-8 rounded-full border border-black" />
             </div>
           </div>
 

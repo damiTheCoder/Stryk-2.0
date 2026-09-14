@@ -13,6 +13,7 @@ export function LandingCta() {
           src="/h6.jpeg"
           alt=""
           fill
+          unoptimized
           className="object-cover blur-sm"
           priority={false}
         />
@@ -30,7 +31,7 @@ export function LandingCta() {
           </h2>
           <div className="mt-8 flex flex-wrap justify-center gap-4">
             <Link href="/sign-in">
-              <Button size="lg" className="bg-black text-white hover:bg-black/90 rounded-lg">
+              <Button size="lg" className="bg-primary text-black hover:bg-primary/90 rounded-lg font-semibold shadow-lg shadow-primary/30">
                 Get Started
               </Button>
             </Link>

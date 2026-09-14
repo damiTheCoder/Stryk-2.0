@@ -11,11 +11,13 @@ import Footer from "@/components/landing/footer"
 export default function LandingPage() {
   return (
     <div className="flex flex-1 flex-col overflow-x-hidden">
-      <LandingHeader />
-      <main className="flex flex-1 flex-col overflow-x-hidden">
+      <div className="relative w-full bg-gradient-to-b from-primary/10 via-primary/2 to-transparent dark:from-primary/8 dark:via-primary/2 dark:to-transparent">
+        <LandingHeader />
         <LandingHero />
+      </div>
+      <main className="flex flex-1 flex-col overflow-x-hidden">
         <section className="mx-auto w-full max-w-7xl px-4 py-12 md:max-w-screen-2xl md:px-8">
-          <Image src="/simage.png" alt="Stryk Analytics" width={1200} height={675} className="mx-auto max-w-full max-w-4xl md:max-w-6xl h-auto rounded-xl shadow-sm" />
+          <Image src="/simage.png" alt="Stryk Analytics" width={1200} height={675} unoptimized className="mx-auto max-w-full max-w-4xl md:max-w-6xl h-auto rounded-xl shadow-sm" />
         </section>
         <LandingPlatform />
         <LandingIntegrations />

@@ -2,7 +2,9 @@
 
 import { useState } from "react"
 import Link from "next/link"
-import { ChevronDownIcon, HamburgerMenuIcon, Cross1Icon } from "@radix-ui/react-icons"
+import NextImage from "next/image"
+import { ChevronDownIcon, Cross1Icon } from "@radix-ui/react-icons"
+import { PanelLeft } from "lucide-react"
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -42,9 +44,9 @@ export function LandingHeader() {
   const menuItems = navigation.filter((item): item is { title: string; links: { title: string; href: string }[] } => Boolean(item.links))
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+    <header className="sticky top-0 z-50 w-full bg-background/30 backdrop-blur-md supports-[backdrop-filter]:bg-background/20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
+        <div className="relative flex justify-between items-center h-16">
           <div className="flex sm:hidden">
             <Button
               variant="ghost"
@@ -56,20 +58,24 @@ export function LandingHeader() {
                 animate={{ rotate: isMenuOpen ? 90 : 0 }}
                 transition={{ duration: 0.3, ease: "easeInOut" }}
               >
-                {isMenuOpen ? <Cross1Icon /> : <HamburgerMenuIcon />}
+                {isMenuOpen ? <Cross1Icon className="size-5" /> : <PanelLeft className="size-5" />}
               </motion.div>
             </Button>
           </div>
           <div className="flex sm:hidden">
-            <Link href="/" className="font-light tracking-tighter text-lg">
-              STRYK
+            <Link href="/" className="flex items-center gap-2 font-light tracking-tighter text-lg">
+              <NextImage src="/brand-logo.png" alt="Stryk" width={24} height={24} className="size-6 rounded-full border border-black dark:border-black object-contain" />
+              <span>STRYK</span>
             </Link>
           </div>
-          <div className="hidden sm:flex items-center space-x-8">
-            <Link href="/" className="font-light tracking-tighter text-2xl">
-              STRYK
+          <div className="hidden sm:flex items-center">
+            <Link href="/" className="flex items-center gap-2 font-light tracking-tighter text-2xl">
+              <NextImage src="/brand-logo.png" alt="Stryk" width={28} height={28} className="size-7 rounded-full border border-black dark:border-black object-contain" />
+              <span>STRYK</span>
             </Link>
+          </div>
 
+          <nav className="hidden md:flex items-center justify-center space-x-8 absolute left-1/2 -translate-x-1/2">
             {navigation.map((item) =>
               item.links ? (
                 <DropdownMenu key={item.title}>
@@ -102,11 +108,12 @@ export function LandingHeader() {
                 </Link>
               ) : null
             )}
-          </div>
+          </nav>
+
           <div className="flex items-center gap-3">
             <ThemeToggle />
             <Link href={mode === "vendor" ? "/vendor/overview" : "/customer/dashboard"}>
-              <Button size="default" className="bg-black text-white hover:bg-black/90 rounded-lg">
+              <Button size="default" className="bg-primary text-primary-foreground hover:bg-primary/90 rounded-lg font-medium shadow-sm shadow-primary/20">
                 {mode === "vendor" ? "Launch App" : "My Dashboard"}
               </Button>
             </Link>

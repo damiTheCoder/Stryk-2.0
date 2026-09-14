@@ -63,9 +63,9 @@ export function LeaseSidebar({ role }: { role: "vendor" | "consumer" | "customer
       <SidebarHeader>
         <SidebarMenu>
           <SidebarMenuItem>
-            <SidebarMenuButton size="lg" render={<Link href={normalizedRole === "vendor" ? "/vendor/overview" : "/customer/dashboard"} />}>
+            <SidebarMenuButton size="lg" render={<Link href="/" />}>
               <div className="flex aspect-square size-10 items-center justify-center">
-                <Image src="/LO.png" alt="Stryk" width={32} height={32} className="size-8 object-contain rounded-lg border border-black/10 dark:border-white/10" />
+                <Image src="/brand-logo.png" alt="Stryk" width={32} height={32} className="size-8 object-contain rounded-full border border-black dark:border-black" />
               </div>
               <div className="grid flex-1 text-left text-base leading-tight">
                 <span className="truncate font-semibold">Stryk</span>

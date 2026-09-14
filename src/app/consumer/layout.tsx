@@ -16,6 +16,7 @@ import { StoreIcon, UserIcon } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip"
 import { useRouter, usePathname } from "next/navigation"
+import Link from "next/link"
 
 export default function ConsumerLayout({
   children,
@@ -44,7 +45,9 @@ export default function ConsumerLayout({
               orientation="vertical"
               className="mr-2 data-vertical:h-5 data-vertical:self-auto md:data-vertical:h-4"
             />
-            <Image src="/LO.png" alt="Stryk" width={32} height={32} className="size-8 rounded-lg border border-black/10 dark:border-white/10 object-contain md:hidden" />
+            <Link href="/" className="flex items-center hover:opacity-80 transition-opacity" title="Go to Home">
+              <Image src="/brand-logo.png" alt="Stryk" width={32} height={32} className="size-8 rounded-full border border-black dark:border-black object-contain md:hidden" />
+            </Link>
             <DynamicBreadcrumb />
           </div>
           <div className="ml-auto flex items-center gap-1 pr-2">

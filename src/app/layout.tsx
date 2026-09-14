@@ -21,21 +21,21 @@ export const metadata: Metadata = {
   },
   description: "A premium installment plan platform built with Next.js, shadcn/ui, and Tailwind CSS.",
   icons: [
-    { rel: "icon", url: "/LO.png", type: "image/png" },
-    { rel: "apple", url: "/LO.png", type: "image/png" },
+    { rel: "icon", url: "/brand-logo.png", type: "image/png" },
+    { rel: "apple", url: "/brand-logo.png", type: "image/png" },
   ],
   openGraph: {
     title: "Stryk 2.0 — Installment Plan Management",
     description: "A premium installment plan platform built with Next.js, shadcn/ui, and Tailwind CSS.",
     type: "website",
     url: "https://stryk2-0.vercel.app",
-    images: [{ url: "/LO.png", width: 1200, height: 630 }],
+    images: [{ url: "/brand-logo.png", width: 1200, height: 630 }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Stryk 2.0 — Installment Plan Management",
     description: "A premium installment plan platform built with Next.js, shadcn/ui, and Tailwind CSS.",
-    images: ["/LO.png"],
+    images: ["/brand-logo.png"],
   },
 };
 

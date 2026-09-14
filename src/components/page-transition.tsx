@@ -27,11 +27,11 @@ export function PageTransition() {
       key={pathname + searchParams.toString()}
     >
       <Image
-        src="/LO.png"
+        src="/brand-logo.png"
         alt="Stryk"
         width={120}
         height={120}
-        className="size-28 rounded-2xl object-contain"
+        className="size-28 rounded-full border-2 border-black object-contain"
       />
     </div>
   )

@@ -54,11 +54,11 @@ export default function SignInPage() {
 
       <div className="flex flex-1 items-center justify-center bg-background px-6 py-12">
         <div className="w-full max-w-sm">
-          <div className="mb-8 flex flex-col items-center lg:hidden">
-            <div className="flex size-12 items-center justify-center">
-              <Image src="/LO.png" alt="Stryk" width={32} height={32} className="size-8 rounded-lg" />
+          <Link href="/" className="mb-8 flex flex-col items-center gap-2 font-medium">
+            <div className="flex size-12 items-center justify-center rounded-full bg-primary/10">
+              <Image src="/brand-logo.png" alt="Stryk" width={40} height={40} className="size-10 rounded-full border border-black object-contain" />
             </div>
-          </div>
+          </Link>
 
           <div className="text-center">
             <h1 className="text-2xl font-semibold tracking-tight">Welcome back</h1>
